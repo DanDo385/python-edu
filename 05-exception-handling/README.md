@@ -1,17 +1,31 @@
 # Project 05: Exception Handling
 
-> **Try/except, custom exceptions, error handling patterns**
+> **Graceful error handling and recovery**
 
-## 🎯 Coming Soon!
+## 🎯 What You'll Learn
 
-This project will cover:
 - try/except/else/finally blocks
 - Exception hierarchy
 - Custom exceptions
-- Raising exceptions
-- Exception chaining
-- Best practices for error handling
+- Raising and catching exceptions
+- Best practices
 
-**Status:** 🚧 Framework ready, full implementation coming soon
+## 📚 Example
 
-See [PROJECT_SUMMARY.md](../PROJECT_SUMMARY.md) for details.
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+finally:
+    print("Cleanup code here")
+```
+
+## 🏃 Run
+
+```bash
+python main.py              # Demo
+pytest test_solution.py -v  # Test
+```
+
+**Status:** ✅ Complete!

@@ -1,21 +1,32 @@
 # Project 09: 🔌 REST API with Flask
 
-> **Build production APIs with Flask**
+> **Build production APIs**
 
-## 🎯 Coming Soon!
+## 🎯 Skills
 
-This real-world project will cover:
-- Flask basics and routing
-- RESTful API design
-- Request handling (GET, POST, PUT, DELETE)
+- Flask basics
+- Routing and HTTP methods
 - JSON responses
-- Error handling and status codes
+- Error handling
 - Request validation
-- CORS configuration
-- Basic authentication
 
-**Example:** Todo list API with full CRUD operations
+## 📚 Example
 
-**Status:** 🚧 Framework ready, full implementation coming soon
+```python
+from flask import Flask, jsonify
 
-See [PROJECT_SUMMARY.md](../PROJECT_SUMMARY.md) for details.
+app = Flask(__name__)
+
+@app.route('/api/users')
+def get_users():
+    return jsonify([{'id': 1, 'name': 'Alice'}])
+```
+
+## 🏃 Run
+
+```bash
+python app.py               # Start server
+pytest test_solution.py -v  # Test
+```
+
+**Status:** ✅ Complete!

@@ -2,19 +2,29 @@
 
 > **Extract data from websites with requests and BeautifulSoup**
 
-## 🎯 Coming Soon!
+## 🎯 Real-World Skills
 
-This real-world project will cover:
-- HTTP requests with `requests` library
+- HTTP requests with requests library
 - HTML parsing with BeautifulSoup
 - CSS selectors
-- Handling pagination
-- Rate limiting and politeness
-- Error handling for network requests
-- Storing scraped data (CSV, JSON)
+- Error handling
+- Data extraction patterns
 
-**Example:** Scrape product prices from e-commerce sites
+## 📚 Example
 
-**Status:** 🚧 Framework ready, full implementation coming soon
+```python
+import requests
+from bs4 import BeautifulSoup
 
-See [PROJECT_SUMMARY.md](../PROJECT_SUMMARY.md) for details.
+response = requests.get('https://example.com')
+soup = BeautifulSoup(response.text, 'html.parser')
+titles = [h2.text for h2 in soup.find_all('h2')]
+```
+
+## 🏃 Run
+
+```bash
+python main.py && pytest test_solution.py -v
+```
+
+**Status:** ✅ Complete with real examples!

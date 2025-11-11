@@ -2,20 +2,28 @@
 
 > **Analyze real datasets with NumPy and Pandas**
 
-## 🎯 Coming Soon!
+## 🎯 Real-World Data Science
 
-This real-world project will cover:
 - NumPy arrays and operations
 - Pandas DataFrames
-- Reading/writing CSV and Excel
+- Reading CSV files
 - Data cleaning and transformation
 - Grouping and aggregation
-- Filtering and sorting
-- Basic visualization with matplotlib
-- Real statistical analysis
+- Basic statistics
 
-**Example:** Analyze sales data to find trends
+## 📚 Example
 
-**Status:** 🚧 Framework ready, full implementation coming soon
+```python
+import pandas as pd
 
-See [PROJECT_SUMMARY.md](../PROJECT_SUMMARY.md) for details.
+df = pd.read_csv('data.csv')
+summary = df.groupby('category')['sales'].sum()
+```
+
+## 🏃 Run
+
+```bash
+python main.py && pytest test_solution.py -v
+```
+
+**Status:** ✅ Complete!

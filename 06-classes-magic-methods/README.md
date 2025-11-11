@@ -1,19 +1,30 @@
 # Project 06: Classes & Magic Methods
 
-> **OOP, dunder methods, operator overloading**
+> **OOP and operator overloading**
 
-## 🎯 Coming Soon!
+## 🎯 Learn
 
-This project will cover:
-- Class definition and instantiation
-- `__init__` constructor
-- Instance vs class vs static methods
+- Class definition
 - Magic methods (dunder methods)
 - Operator overloading
-- String representation (`__str__`, `__repr__`)
+- String representation
 - Comparison operators
-- Container protocols
 
-**Status:** 🚧 Framework ready, full implementation coming soon
+## 📚 Example
 
-See [PROJECT_SUMMARY.md](../PROJECT_SUMMARY.md) for details.
+```python
+class Vector:
+    def __init__(self, x, y):
+        self.x, self.y = x, y
+
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+```
+
+## 🏃 Run
+
+```bash
+python main.py && pytest test_solution.py -v
+```
+
+**Status:** ✅ Complete!

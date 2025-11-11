@@ -2,15 +2,26 @@
 
 > **Resource management with 'with' statement**
 
-## 🎯 Coming Soon!
+## 🎯 What You'll Learn
 
-This project will cover:
-- `with` statement and resource management
+- `with` statement for resource management
 - `__enter__` and `__exit__` magic methods
 - `contextlib.contextmanager` decorator
 - Exception handling in context managers
-- Real-world examples: file I/O, database connections, locks
 
-**Status:** 🚧 Framework ready, full implementation coming soon
+## 📚 Quick Example
 
-See [PROJECT_SUMMARY.md](../PROJECT_SUMMARY.md) for details.
+```python
+with open('file.txt', 'r') as f:
+    content = f.read()
+# File automatically closed!
+```
+
+## 🏃 Run
+
+```bash
+python main.py              # Demo
+pytest test_solution.py -v  # Test your solution
+```
+
+**Status:** ✅ Complete with tests!

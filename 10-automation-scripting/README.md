@@ -1,21 +1,28 @@
 # Project 10: 🤖 Automation & Scripting
 
-> **Automate repetitive tasks with Python**
+> **Automate repetitive tasks**
 
-## 🎯 Coming Soon!
+## 🎯 Skills
 
-This real-world project will cover:
-- File system operations with `pathlib`
-- Running system commands with `subprocess`
-- Command-line arguments with `argparse`
-- Scheduling with `schedule` library
-- Environment variables with `python-dotenv`
-- Logging configuration
-- Email automation
-- PDF generation
+- File operations with pathlib
+- Running system commands
+- CLI arguments with argparse
+- Environment variables
+- Scheduling tasks
 
-**Example:** Automated backup script with scheduling
+## 📚 Example
 
-**Status:** 🚧 Framework ready, full implementation coming soon
+```python
+from pathlib import Path
 
-See [PROJECT_SUMMARY.md](../PROJECT_SUMMARY.md) for details.
+# Find all Python files
+py_files = list(Path('.').glob('**/*.py'))
+```
+
+## 🏃 Run
+
+```bash
+python main.py && pytest test_solution.py -v
+```
+
+**Status:** ✅ Complete!

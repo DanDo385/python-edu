@@ -2,26 +2,31 @@
 
 > **Modify functions without changing their code**
 
-## 🎯 Coming Soon!
+## 🎯 Learning Objectives
 
-This project will cover:
-- Function decorators (@decorator syntax)
-- Decorator factories (decorators with arguments)
-- Class decorators
-- Multiple decorators (stacking)
-- functools.wraps
-- Real-world use cases: logging, timing, authentication, caching
+1. **Function Decorators** - @decorator syntax
+2. **Decorator Factories** - Decorators with arguments
+3. **functools.wraps** - Preserving function metadata
+4. **Multiple Decorators** - Stacking decorators
+5. **Real-world Uses** - Logging, timing, caching, authentication
 
-## 📚 Preview
+## 🔥 What Are Decorators?
 
 ```python
 @timer
-@cache
-def expensive_function(n):
-    # Automatically timed and cached!
-    pass
+def slow_function():
+    time.sleep(1)
+    return "Done"
+
+# Equivalent to: slow_function = timer(slow_function)
 ```
 
-**Status:** 🚧 Framework ready, full implementation coming soon
+## 🏃 Running This Project
 
-See [PROJECT_SUMMARY.md](../PROJECT_SUMMARY.md) for details.
+```bash
+python main.py              # Interactive demo
+pytest test_solution.py -v  # Test your solution
+cat solution.py             # Read explanations
+```
+
+**Status:** ✅ Complete with tests!
