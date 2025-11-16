@@ -1,465 +1,301 @@
-# Project Implementation Summary
+# Python-50x-Minis: Complete Project Curriculum
 
-> **Track the status of all 10 mini-projects**
+**From Python Basics to LLM Engineering in 50 Progressive Projects**
 
-Last Updated: 2025-11-11
-
----
-
-## Overview
-
-| Status | Count | Percentage |
-|--------|-------|------------|
-| ✅ Complete | 2 | 20% |
-| 🚧 Framework Ready | 8 | 80% |
-| ❌ Not Started | 0 | 0% |
-
-**Total Progress:** 20% fully implemented, 100% structured
+> A production-grade learning path for mastering Python, data structures, machine learning math, PyTorch systems, and transformer-based language models—built from first principles.
 
 ---
 
-## Detailed Status
+## Phase I — Python & DSA Fundamentals (Projects 01–15)
 
-### ✅ Project 01: Dynamic Typing Basics
+**Goal**: Master Python syntax and interview-ready algorithms
 
-**Status:** COMPLETE
-
-**Files:**
-- ✅ README.md (Learning objectives, concepts, examples)
-- ✅ lib.py (Stub functions for learners)
-- ✅ main.py (Interactive demo)
-- ✅ solution.py (~957 lines with extreme documentation)
-- ✅ test_solution.py (Comprehensive test suite)
-
-**Topics Covered:**
-- Dynamic typing fundamentals
-- Duck typing philosophy
-- Type hints and annotations
-- Variable binding and references
-- Type checking with `isinstance()` and `type()`
-- Performance implications of dynamic typing
-- Comparison with statically-typed languages (Rust, Go, TypeScript)
-
-**Test Coverage:** 95%+
-
-**Line Count:**
-- solution.py: ~957 lines (including documentation)
-- test_solution.py: ~200 lines
-- Total: ~1,200 lines
-
-**Key Functions Implemented:**
-1. `add_numbers()` - Basic addition with type demonstration
-2. `multiply()` - Duck typing example (works with different types)
-3. `describe_type()` - Type introspection
-4. `safe_divide()` - Type checking and error handling
-5. `process_data()` - Type hints demonstration
+| # | Project Name | One-Line Description | Difficulty |
+|---|--------------|---------------------|------------|
+| 01 | `basic-python-syntax` | Variables, types, I/O, arithmetic—your first Python program | ⭐ Beginner |
+| 02 | `control-flow-loops` | Conditionals, for/while loops, FizzBuzz, break/continue | ⭐ Beginner |
+| 03 | `functions-modules` | Function definitions, scope, imports, docstrings, code organization | ⭐ Beginner |
+| 04 | `lists-tuples` | Sequence operations, slicing, comprehensions, mutability vs immutability | ⭐ Beginner |
+| 05 | `dictionaries-sets` | Hash maps, set operations, word frequency, uniqueness checks | ⭐ Beginner |
+| 06 | `oop-basics` | Classes, objects, `__init__`, methods, encapsulation, BankAccount example | ⭐⭐ Intermediate |
+| 07 | `oop-advanced` | Inheritance, polymorphism, exceptions, custom error types, Shape hierarchy | ⭐⭐ Intermediate |
+| 08 | `recursion-divide-conquer` | Factorial, Fibonacci, GCD, recursive binary search, call stack visualization | ⭐⭐ Intermediate |
+| 09 | `searching-algorithms` | Linear search O(n), binary search O(log n), complexity analysis | ⭐⭐ Intermediate |
+| 10 | `sorting-algorithms` | Insertion sort, merge sort, quicksort, stability, in-place vs out-of-place | ⭐⭐ Intermediate |
+| 11 | `stack-queue` | LIFO/FIFO structures, balanced parentheses, BFS simulation, deque usage | ⭐⭐ Intermediate |
+| 12 | `linked-lists` | Node-based structures, insertion, deletion, reversal, pointer manipulation | ⭐⭐ Intermediate |
+| 13 | `binary-trees` | Tree traversals (in/pre/post-order), BST operations, height calculation | ⭐⭐⭐ Advanced |
+| 14 | `graphs-traversal` | Adjacency lists/matrix, DFS, BFS, path finding, connected components | ⭐⭐⭐ Advanced |
+| 15 | `dynamic-programming` | Memoization, tabulation, coin change, knapsack, subproblem optimization | ⭐⭐⭐ Advanced |
 
 ---
 
-### ✅ Project 02: List Comprehensions
+## Phase II — ML Math & Autodiff (Projects 16–30)
 
-**Status:** COMPLETE
+**Goal**: Build ML intuition and implement neural networks from scratch
 
-**Files:**
-- ✅ README.md (Why comprehensions are Python's superpower)
-- ✅ lib.py (Practice stubs)
-- ✅ main.py (Interactive examples)
-- ✅ solution.py (~1,225 lines with EXTREME detail)
-- ✅ test_solution.py (Edge cases + performance tests)
-
-**Topics Covered:**
-- List comprehensions syntax and patterns
-- Dictionary comprehensions
-- Set comprehensions
-- Generator expressions (lazy evaluation)
-- Nested comprehensions
-- Performance analysis (Python vs Rust vs Go)
-- Memory efficiency patterns
-- When to use comprehensions vs loops
-
-**Test Coverage:** 98%+
-
-**Line Count:**
-- solution.py: ~1,225 lines (most detailed!)
-- test_solution.py: ~250 lines
-- Total: ~1,500 lines
-
-**Key Functions Implemented:**
-1. `filter_even_numbers()` - Basic list comprehension
-2. `square_numbers()` - Transformation pattern
-3. `word_lengths()` - Dict comprehension
-4. `unique_letters()` - Set comprehension
-5. `flatten_matrix()` - Nested comprehensions
-6. `generate_squares()` - Generator expressions
-7. `cartesian_product()` - Complex nested example
-8. `filter_and_transform()` - Combined operations
+| # | Project Name | One-Line Description | Difficulty |
+|---|--------------|---------------------|------------|
+| 16 | `numpy-101` | Ndarrays, vectorization, broadcasting basics, shape manipulation, dtype | ⭐⭐ Intermediate |
+| 17 | `numpy-advanced` | Broadcasting rules, matrix ops, @-operator, performance optimization | ⭐⭐ Intermediate |
+| 18 | `linear-algebra-essentials` | Dot products, matrix multiplication, solving Ax=b, projections, eigenvalues | ⭐⭐ Intermediate |
+| 19 | `gradient-descent-basics` | 1D optimization, learning rate α, convergence criteria, loss landscapes | ⭐⭐ Intermediate |
+| 20 | `linear-regression-scratch` | MSE loss, gradient ∂L/∂w, fitting y=wx+b, visualization with matplotlib | ⭐⭐ Intermediate |
+| 21 | `logistic-regression` | Sigmoid σ(z), binary cross-entropy, classification, decision boundaries | ⭐⭐ Intermediate |
+| 22 | `activation-functions` | ReLU, tanh, softmax, derivatives for backprop, dead neuron problem | ⭐⭐ Intermediate |
+| 23 | `manual-backpropagation` | Chain rule ∂L/∂w, gradient flow, 2-layer MLP, numerical gradient checks | ⭐⭐⭐ Advanced |
+| 24 | `autodiff-engine` | Computational graphs, reverse-mode AD, Tensor class, .backward() | ⭐⭐⭐ Advanced |
+| 25 | `mlp-from-scratch` | Multi-layer perceptron, XOR problem, non-linear separation, training loop | ⭐⭐⭐ Advanced |
+| 26 | `model-evaluation` | Train/val/test splits, accuracy/precision/recall, confusion matrix, k-fold CV | ⭐⭐ Intermediate |
+| 27 | `regularization` | L1/L2 penalty, dropout, early stopping, overfitting vs underfitting curves | ⭐⭐ Intermediate |
+| 28 | `hyperparameter-tuning` | Grid search, random search, LR schedules, validation-based selection | ⭐⭐ Intermediate |
+| 29 | `batch-gradient-descent` | SGD vs batch vs mini-batch, momentum, RMSprop, Adam optimizer concepts | ⭐⭐ Intermediate |
+| 30 | `mnist-numpy-capstone` | Full MNIST digit classifier in pure NumPy—Phase II capstone project | ⭐⭐⭐ Advanced |
 
 ---
 
-### 🚧 Project 03: Decorators & Metaprogramming
+## Phase III — PyTorch Systems & Deep Learning (Projects 31–40)
 
-**Status:** FRAMEWORK READY
+**Goal**: Master PyTorch for production deep learning
 
-**Files:**
-- 🚧 README.md (Structure ready, needs content)
-- 🚧 lib.py (Function stubs defined)
-- 🚧 main.py (Demo structure ready)
-- ❌ solution.py (Not yet implemented - needs ~800 lines)
-- 🚧 test_solution.py (Test structure ready)
-
-**Topics to Cover:**
-- Function decorators (@decorator)
-- Decorator factories (decorators with arguments)
-- Class decorators
-- Multiple decorators (stacking)
-- `functools.wraps` for metadata preservation
-- Built-in decorators (@property, @staticmethod, @classmethod)
-- Real-world use cases: logging, timing, authentication, caching
-
-**Planned Functions:**
-1. `@timer` - Measure function execution time
-2. `@cache` - Memoization decorator
-3. `@validate` - Input validation
-4. `@retry` - Retry failed operations
-5. `@log` - Logging decorator
-
-**Estimated Complexity:** ⭐⭐ Intermediate
-**Estimated Time:** 1.5 hours
+| # | Project Name | One-Line Description | Difficulty |
+|---|--------------|---------------------|------------|
+| 31 | `pytorch-tensors-gpu` | torch.Tensor, .to('cuda'), device management, CPU vs GPU benchmarking | ⭐⭐ Intermediate |
+| 32 | `pytorch-autograd` | requires_grad=True, .backward(), .grad, detach(), no_grad() context | ⭐⭐ Intermediate |
+| 33 | `pytorch-modules` | nn.Module subclassing, custom layers, parameter registration, forward() | ⭐⭐ Intermediate |
+| 34 | `pytorch-mnist-training` | DataLoader, SGD/Adam, training loop, validation, checkpoint saving (.pth) | ⭐⭐ Intermediate |
+| 35 | `cnn-cifar10` | nn.Conv2d, pooling, batch norm, image classification on CIFAR-10 | ⭐⭐⭐ Advanced |
+| 36 | `embeddings-text-classification` | nn.Embedding, LSTM/GRU, IMDB sentiment, padding/packing sequences | ⭐⭐⭐ Advanced |
+| 37 | `advanced-training` | Adam optimizer, LR schedulers, gradient clipping, TensorBoard logging | ⭐⭐ Intermediate |
+| 38 | `transfer-learning` | Pretrained ResNet-18, fine-tuning, layer freezing, feature extraction | ⭐⭐⭐ Advanced |
+| 39 | `char-rnn-shakespeare` | Character-level language model, LSTM, text generation, sampling strategies | ⭐⭐⭐ Advanced |
+| 40 | `seq2seq-attention` | Encoder-decoder RNN, Bahdanau attention, toy translation task | ⭐⭐⭐ Advanced |
 
 ---
 
-### 🚧 Project 04: Context Managers
+## Phase IV — Transformers & LLMs (Projects 41–50)
 
-**Status:** FRAMEWORK READY
+**Goal**: Build and deploy GPT-style models from scratch
 
-**Files:**
-- 🚧 README.md (Structure ready)
-- 🚧 lib.py (Function stubs)
-- 🚧 main.py (Demo structure)
-- ❌ solution.py (Not yet implemented - needs ~600 lines)
-- 🚧 test_solution.py (Test structure)
-
-**Topics to Cover:**
-- `with` statement and resource management
-- `__enter__` and `__exit__` magic methods
-- `contextlib.contextmanager` decorator
-- Exception handling in context managers
-- Multiple context managers
-- Real-world examples: file I/O, database connections, locks
-
-**Planned Functions:**
-1. `FileManager` - Custom file context manager
-2. `Timer` - Timing context
-3. `DatabaseConnection` - Resource management
-4. `temporary_directory()` - Temporary resources
-5. `suppress_errors()` - Error suppression
-
-**Estimated Complexity:** ⭐⭐ Intermediate
-**Estimated Time:** 1 hour
+| # | Project Name | One-Line Description | Difficulty |
+|---|--------------|---------------------|------------|
+| 41 | `scaled-dot-product-attention` | Q/K/V mechanics, softmax(QK^T/√d_k)V, masking, attention from scratch | ⭐⭐⭐ Advanced |
+| 42 | `transformer-blocks` | Multi-head attention, FFN, LayerNorm, residuals, sinusoidal pos encoding | ⭐⭐⭐ Advanced |
+| 43 | `gpt-decoder-model` | Full GPT architecture, causal masking, stacked decoder layers, LM head | ⭐⭐⭐⭐ Expert |
+| 44 | `tokenization-bpe` | Byte-pair encoding, SentencePiece training, vocab building, dataset prep | ⭐⭐⭐ Advanced |
+| 45 | `babygpt-training` | Train GPT from scratch on WikiText-2, loss curves, perplexity, sampling | ⭐⭐⭐⭐ Expert |
+| 46 | `llm-inference-decoding` | Greedy, beam search, top-k/top-p (nucleus), temperature τ scaling | ⭐⭐⭐ Advanced |
+| 47 | `model-quantization` | INT8/FP16 quantization, torch.quantization, memory/speed tradeoffs | ⭐⭐⭐ Advanced |
+| 48 | `llm-serving-api` | FastAPI endpoints, batching, concurrent requests, model deployment | ⭐⭐⭐ Advanced |
+| 49 | `rag-system` | Vector DB (FAISS), embeddings, retrieval-augmented generation, Q&A | ⭐⭐⭐⭐ Expert |
+| 50 | `llm-system-design` | Architecture planning, scaling, monitoring, ethics, production LLM systems | ⭐⭐⭐⭐ Expert |
 
 ---
 
-### 🚧 Project 05: Exception Handling
+## Learning Path Overview
 
-**Status:** FRAMEWORK READY
+### Stats at a Glance
+- **Total Projects**: 50
+- **Estimated Time**: 6–12 months (self-paced, 10–15 hrs/week)
+- **Prerequisites**: Basic computer literacy, curiosity, willingness to debug
+- **Language**: Python 3.12.12
+- **Target Audience**: Self-learners, bootcamp students, CS undergrads, career-switchers into AI/ML
 
-**Files:**
-- 🚧 README.md (Structure ready)
-- 🚧 lib.py (Function stubs)
-- 🚧 main.py (Demo structure)
-- ❌ solution.py (Not yet implemented - needs ~700 lines)
-- 🚧 test_solution.py (Test structure)
+### What You'll Build
+By project 50, you will have:
+- ✅ Implemented core CS algorithms (sorting, search, graphs, DP)
+- ✅ Built neural networks from scratch (no frameworks)
+- ✅ Created your own autodiff engine (like micrograd)
+- ✅ Trained CNNs, RNNs, and Transformers in PyTorch
+- ✅ Implemented GPT-style decoder from first principles
+- ✅ Trained a "BabyGPT" language model on real text
+- ✅ Deployed LLMs via API with quantization and RAG
+- ✅ Designed production-scale LLM systems
 
-**Topics to Cover:**
-- try/except/else/finally blocks
-- Exception hierarchy
-- Custom exceptions
-- Raising exceptions
-- Exception chaining
-- Best practices for error handling
-- When to catch vs propagate
-
-**Planned Functions:**
-1. `safe_divide()` - Basic exception handling
-2. `parse_data()` - Multiple exception types
-3. Custom exception classes
-4. `retry_operation()` - Exception-based retry logic
-5. `validate_input()` - Validation with custom exceptions
-
-**Estimated Complexity:** ⭐⭐ Intermediate
-**Estimated Time:** 1 hour
+### Progression Philosophy
+Each project builds incrementally:
+1. **Phase I** (01–15): Pure Python—no dependencies. Algorithmic thinking.
+2. **Phase II** (16–30): NumPy only. Math intuition. Build ML from scratch.
+3. **Phase III** (31–40): PyTorch introduced. Scale to real datasets (MNIST, CIFAR-10, IMDB).
+4. **Phase IV** (41–50): Transformers & LLMs. Production systems. Deployment.
 
 ---
 
-### 🚧 Project 06: Classes & Magic Methods
+## Difficulty Legend
 
-**Status:** FRAMEWORK READY
-
-**Files:**
-- 🚧 README.md (Structure ready)
-- 🚧 lib.py (Class stubs)
-- 🚧 main.py (Demo structure)
-- ❌ solution.py (Not yet implemented - needs ~900 lines)
-- 🚧 test_solution.py (Test structure)
-
-**Topics to Cover:**
-- Class definition and instantiation
-- `__init__` constructor
-- Instance vs class vs static methods
-- Magic methods (dunder methods)
-- Operator overloading
-- String representation (`__str__`, `__repr__`)
-- Comparison operators
-- Container protocols
-
-**Planned Classes:**
-1. `Vector` - Math operations with operator overloading
-2. `BankAccount` - State management
-3. `Stack` - Container protocol
-4. `Temperature` - Unit conversion with magic methods
-5. `Person` - Comparison and string representation
-
-**Estimated Complexity:** ⭐⭐ Intermediate
-**Estimated Time:** 2 hours
+| Symbol | Level | Description |
+|--------|-------|-------------|
+| ⭐ | **Beginner** | Foundational concepts, minimal prerequisites, step-by-step guidance |
+| ⭐⭐ | **Intermediate** | Requires prior projects or equivalent knowledge, some problem-solving |
+| ⭐⭐⭐ | **Advanced** | Challenging, synthesizes multiple concepts, debugging skills needed |
+| ⭐⭐⭐⭐ | **Expert** | Capstone-level, production-oriented, system design thinking required |
 
 ---
 
-### 🚧 Project 07: 🌐 Web Scraping
-
-**Status:** FRAMEWORK READY (Real-world project!)
-
-**Files:**
-- 🚧 README.md (Structure ready)
-- 🚧 lib.py (Function stubs)
-- 🚧 main.py (Demo structure)
-- ❌ solution.py (Not yet implemented - needs ~800 lines)
-- 🚧 test_solution.py (Test structure)
-- 📁 sample_data/ (Example HTML files for testing)
-
-**Topics to Cover:**
-- HTTP requests with `requests` library
-- HTML parsing with BeautifulSoup
-- CSS selectors
-- Handling pagination
-- Rate limiting and politeness
-- Error handling for network requests
-- Storing scraped data (CSV, JSON)
-
-**Real-World Example:** Scrape product prices from e-commerce site
-
-**Planned Functions:**
-1. `fetch_page()` - HTTP GET with error handling
-2. `parse_product_listing()` - Extract product data
-3. `scrape_pagination()` - Handle multiple pages
-4. `save_to_csv()` - Export data
-5. `scrape_with_retry()` - Robust scraping
-
-**Estimated Complexity:** ⭐⭐⭐ Advanced
-**Estimated Time:** 2 hours
-
----
-
-### 🚧 Project 08: 📊 Data Analysis with Pandas
-
-**Status:** FRAMEWORK READY (Real-world project!)
-
-**Files:**
-- 🚧 README.md (Structure ready)
-- 🚧 lib.py (Function stubs)
-- 🚧 main.py (Demo structure)
-- ❌ solution.py (Not yet implemented - needs ~1,000 lines)
-- 🚧 test_solution.py (Test structure)
-- 📁 sample_data/ (CSV files with sales/customer data)
-
-**Topics to Cover:**
-- NumPy arrays and operations
-- Pandas DataFrames
-- Reading/writing CSV and Excel
-- Data cleaning and transformation
-- Grouping and aggregation
-- Filtering and sorting
-- Basic visualization with matplotlib
-- Real statistical analysis
-
-**Real-World Example:** Analyze sales data to find trends
-
-**Planned Functions:**
-1. `load_sales_data()` - Read and clean CSV
-2. `analyze_monthly_trends()` - Time series analysis
-3. `find_top_products()` - Ranking and filtering
-4. `customer_segmentation()` - Grouping analysis
-5. `visualize_trends()` - Create charts
-
-**Estimated Complexity:** ⭐⭐⭐ Advanced
-**Estimated Time:** 2-3 hours
-
----
-
-### 🚧 Project 09: 🔌 REST API with Flask
-
-**Status:** FRAMEWORK READY (Real-world project!)
-
-**Files:**
-- 🚧 README.md (Structure ready)
-- 🚧 lib.py (Not applicable - API code)
-- 🚧 app.py (Flask application)
-- ❌ solution.py (Not yet implemented - needs ~700 lines)
-- 🚧 test_solution.py (API tests with pytest)
-
-**Topics to Cover:**
-- Flask basics and routing
-- RESTful API design
-- Request handling (GET, POST, PUT, DELETE)
-- JSON responses
-- Error handling and status codes
-- Request validation
-- CORS configuration
-- Basic authentication
-
-**Real-World Example:** Todo list API with full CRUD
-
-**Planned Endpoints:**
-1. `GET /api/todos` - List all todos
-2. `POST /api/todos` - Create new todo
-3. `GET /api/todos/<id>` - Get single todo
-4. `PUT /api/todos/<id>` - Update todo
-5. `DELETE /api/todos/<id>` - Delete todo
-
-**Estimated Complexity:** ⭐⭐⭐ Advanced
-**Estimated Time:** 2 hours
-
----
-
-### 🚧 Project 10: 🤖 Automation & Scripting
-
-**Status:** FRAMEWORK READY (Real-world project!)
-
-**Files:**
-- 🚧 README.md (Structure ready)
-- 🚧 lib.py (Function stubs)
-- 🚧 main.py (Demo structure)
-- ❌ solution.py (Not yet implemented - needs ~800 lines)
-- 🚧 test_solution.py (Test structure)
-
-**Topics to Cover:**
-- File system operations with `pathlib`
-- Running system commands with `subprocess`
-- Command-line arguments with `argparse`
-- Scheduling with `schedule` library
-- Environment variables with `python-dotenv`
-- Logging configuration
-- Email automation
-- PDF generation
-
-**Real-World Example:** Automated backup script with scheduling
-
-**Planned Functions:**
-1. `backup_directory()` - Recursive file backup
-2. `clean_old_files()` - Delete files older than N days
-3. `batch_rename()` - Rename files with patterns
-4. `generate_report()` - Create PDF report
-5. `schedule_backup()` - Automated scheduling
-
-**Estimated Complexity:** ⭐⭐⭐ Advanced
-**Estimated Time:** 2 hours
-
----
-
-## Statistics
-
-### Current State (2025-11-11)
-
-**Completed Projects:**
-- Projects 1-2: Fully implemented with extreme documentation
-- Total lines in solutions: ~2,182 lines
-- Total test coverage: 96.5%
-
-**Framework Ready:**
-- Projects 3-10: Structure in place, ready for implementation
-- README outlines created
-- Test structure defined
-- Function stubs prepared
-
-### Estimated Completion
-
-**To Complete All Projects:**
-- Remaining solution.py files: ~6,500 lines
-- Remaining tests: ~1,000 lines
-- Total estimated time: 15-20 hours
-
-**When Complete:**
-- Total lines of code: 10,000+
-- Documentation lines: 6,000+
-- Test cases: 200+
-- Real-world applications: 4
-
----
-
-## How to Use This Summary
+## How to Use This Curriculum
 
 ### For Learners
+1. **Start at your level**: Beginners start at 01. ML-familiar can skip to 16. PyTorch users jump to 31.
+2. **Follow sequentially**: Each project assumes knowledge from previous ones.
+3. **Read-Code-Test-Build**: Read README → Study solution → Run tests → Build exercise from scratch.
+4. **Time commitment**: ~2–6 hours per project (varies by difficulty).
+5. **Get stuck?**: Check `solution_in_words.md` for narrative walkthrough.
 
-**Start with completed projects:**
-1. Begin with Project 01 (Dynamic Typing)
-2. Move to Project 02 (List Comprehensions)
-3. Wait for remaining projects or contribute!
+### For Educators
+- Use as semester-long curriculum (pick 15–20 projects)
+- Assign projects as homework with auto-grading via pytest
+- Mix lectures with hands-on project work
+- Emphasize `Why` sections in READMEs for conceptual understanding
 
-**Track your progress:**
-- Check off projects as you complete them
-- Star your favorite projects
-- Note which concepts need review
-
-### For Contributors
-
-**Help complete the repository:**
-1. Pick a framework-ready project (3-10)
-2. Follow the documentation style from Projects 1-2
-3. Include line-by-line explanations
-4. Add performance analysis
-5. Include multi-language comparisons
-6. Write comprehensive tests
-
-**Documentation Standards:**
-- Module-level docstring: 150-200 lines
-- Function docstrings: 20-50 lines each
-- Inline comments: Every line explained
-- Performance notes: Real benchmarks
-- Language comparisons: Python vs Rust/Go/JS
+### For Interviewers/Job Seekers
+- **Phase I** preps for coding interviews (FAANG-style)
+- **Phase II–III** demonstrates ML engineering skills
+- **Phase IV** shows cutting-edge LLM/transformer expertise
+- Portfolio-ready: Each project is GitHub-showcase quality
 
 ---
 
-## Next Steps
+## Repo Structure
 
-### Immediate Priorities
+```
+python-edu/
+├── project-01-basic-python-syntax/
+│   ├── README.md                    # What, Why, When, Pitfalls, How
+│   ├── exercise.py                   # TODOs + partial impl + hints
+│   ├── solution/
+│   │   └── solution.py               # Full impl + heavy comments
+│   ├── test/
+│   │   └── test_project_01.py        # pytest suite
+│   ├── notebook.ipynb                # (optional for 01-15, required 16+)
+│   └── solution_in_words.md          # Human-readable walkthrough
+├── project-02-control-flow-loops/
+│   └── ... (same structure)
+├── ...
+├── project-50-llm-system-design/
+│   └── ...
+├── README.md                          # Repo overview + quickstart
+├── PROJECT_SUMMARY.md                 # This file
+├── PYTHON_BASICS.md                   # Syntax reference
+├── DSA_PRIMER.md                      # Algorithm patterns
+├── MACHINE_LEARNING_MATH.md           # Lin alg, calculus, probability
+├── AUTODIFF_FROM_SCRATCH.md           # Backprop deep dive
+├── PYTORCH_INTERNALS.md               # How PyTorch works
+├── TRANSFORMERS_EXPLAINED.md          # Attention mechanism guide
+├── GPU_PRIMER.md                      # CUDA, parallelism, hardware
+├── LLM_SYSTEMS_OVERVIEW.md            # Production LLM architecture
+├── requirements-dev.txt               # Pinned dependencies
+└── pytest.ini                         # Test configuration
+```
 
-1. **Project 03** - Decorators (high value, widely used)
-2. **Project 09** - Flask API (real-world, popular)
-3. **Project 08** - Data Analysis (high demand)
-4. **Project 07** - Web Scraping (practical)
-5. **Project 10** - Automation (useful)
-6. **Projects 04-06** - Core concepts
+---
 
-### Long-term Goals
+## Testing Philosophy
 
-- 100% project completion
-- Video tutorials for each project
-- Interactive coding challenges
-- Community contributions
-- Translations to other languages
-- Jupyter notebook versions
+Every project includes pytest-based tests:
+- ✅ **Positive cases**: Happy path, expected behavior
+- ✅ **Edge cases**: Empty inputs, boundary conditions, None handling
+- ✅ **Property tests**: Randomized inputs, invariant checking (Hypothesis optional)
+- ✅ **Performance tests**: Benchmarks for algorithm efficiency (where relevant)
+- ✅ **Numerical stability**: Tolerance checks for ML code (np.allclose)
+
+Run tests:
+```bash
+# Single project
+cd project-01-basic-python-syntax
+pytest test/
+
+# All projects
+pytest
+
+# With coverage
+pytest --cov=. --cov-report=html
+```
+
+---
+
+## Dependencies
+
+### Phase I (01–15): ZERO external dependencies
+Pure Python standard library only.
+
+### Phase II (16–30): NumPy + viz
+```
+numpy>=1.24.0
+matplotlib>=3.7.0
+scipy>=1.10.0  (optional, for advanced linalg)
+```
+
+### Phase III (31–40): PyTorch ecosystem
+```
+torch>=2.0.0
+torchvision>=0.15.0
+torchtext>=0.15.0
+tqdm>=4.65.0
+```
+
+### Phase IV (41–50): LLM tools
+```
+torch>=2.0.0
+einops>=0.6.1
+sentencepiece>=0.1.99
+transformers>=4.30.0  (for comparison, not from-scratch impl)
+datasets>=2.12.0
+faiss-cpu>=1.7.4
+fastapi>=0.95.0
+uvicorn>=0.22.0
+```
+
+### Dev/Testing
+```
+pytest>=7.3.0
+pytest-cov>=4.1.0
+hypothesis>=6.75.0  (property-based testing)
+black>=23.3.0  (code formatting)
+mypy>=1.3.0  (type checking)
+```
+
+---
+
+## Contributing
+
+We welcome contributions! See existing projects 01–02 for style examples.
+
+**Style guide**:
+- Heavy inline comments (explain *why*, not just *what*)
+- Type hints everywhere (`def func(x: int) -> int:`)
+- Docstrings with Args/Returns/Examples
+- ASCII diagrams in READMEs
+- Cross-language comparisons (Python vs Rust/C/JS)
+- Performance notes (Big-O, memory, cache behavior)
+
+---
+
+## Credits & References
+
+Inspired by:
+- Andrej Karpathy's *Neural Networks: Zero to Hero*
+- *Attention Is All You Need* (Vaswani et al., 2017)
+- *Deep Learning* (Goodfellow, Bengio, Courville)
+- *Structure and Interpretation of Computer Programs* (SICP pedagogy)
+- FastAI, PyTorch tutorials, HuggingFace docs
+
+---
+
+## License
+
+MIT License. Educational use encouraged. See LICENSE file.
 
 ---
 
 ## Questions?
 
-- Check [README.md](./README.md) for overview
-- See [PYTHON_BASICS.md](./PYTHON_BASICS.md) for syntax reference
-- Start with [Project 01](./01-dynamic-typing-basics/)
+- 📖 Start here: [README.md](./README.md)
+- 🐍 Python refresher: [PYTHON_BASICS.md](./PYTHON_BASICS.md)
+- 💡 First project: [project-01-basic-python-syntax/](./project-01-basic-python-syntax/)
+- 🤝 Stuck? Open an issue or discussion
 
 ---
 
-**Want to contribute?** See the Contributing section in README.md!
+*"The best way to learn is to build."* — This curriculum is your 50-project gym.
 
----
-
-*This is a living document. Status updated as projects are completed.*
+Last updated: 2025-11-16

@@ -1,590 +1,484 @@
-# 🐍 Python 10x Mini-Projects
+# 🐍 Python-50x-Minis: From Basics to Building GPT
 
-> **Learn Python by understanding WHY, not just HOW**
+> **Master Python, Algorithms, Machine Learning Math, PyTorch, and LLMs through 50 progressive hands-on projects**
 
-A comprehensive, production-ready Python learning repository with **extreme documentation** that teaches you to think in Python, understand performance trade-offs, and make informed architectural decisions.
-
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.12.12](https://img.shields.io/badge/python-3.12.12-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](./tests)
+[![Projects](https://img.shields.io/badge/projects-50-brightgreen.svg)](./PROJECT_SUMMARY.md)
 
 ---
 
-## 🎯 What Makes This Different?
+## 🎯 What is This?
 
-Most Python tutorials teach you syntax. **This repository teaches you to think in Python.**
+**A complete, production-grade learning path** that takes you from Python syntax to training and serving GPT-style language models.  No hand-waving, no magic—just **first-principles understanding** with runnable code.
 
-### Our Philosophy
+### What Makes This Different?
 
-```python
-# ❌ Other tutorials teach you this works:
-numbers = [1, 2, 3, 4, 5]
-evens = [x for x in numbers if x % 2 == 0]
-
-# ✅ We teach you WHY it works, WHEN to use it, and the trade-offs:
-# - Memory: O(n) space, creates new list
-# - Time: O(n) iteration, single pass
-# - Readability: High (Pythonic!)
-# - Performance: ~30ms for 1M items
-# - Rust equivalent: ~0.2ms (150x faster!)
-# - BUT: Python code took 30 seconds to write, Rust took 5 minutes
-# - Trade-off: Developer time > CPU time (for most applications!)
-```
-
-### What You'll Get
-
-✅ **Line-by-line explanations** - Every symbol, keyword, and design decision explained
-✅ **Honest performance analysis** - Real benchmarks comparing Python to Rust/Go/JavaScript
-✅ **Multi-language context** - See the same code in different languages
-✅ **Real-world applications** - 4 projects solving actual problems
-✅ **Python philosophy** - Understand the "Pythonic" way of thinking
-✅ **Production patterns** - Best practices, common mistakes, edge cases
-
----
-
-## 📚 10 Projects Overview
-
-| # | Project | Concepts | Difficulty | Status |
-|---|---------|----------|------------|--------|
-| 01 | **Dynamic Typing Basics** | Types, duck typing, type hints | ⭐ Beginner | ✅ Complete |
-| 02 | **List Comprehensions** | Comprehensions, generators, memory | ⭐ Beginner | ✅ Complete |
-| 03 | **Decorators & Metaprogramming** | Functions as objects, closures | ⭐⭐ Intermediate | 🚧 Framework |
-| 04 | **Context Managers** | Resource management, `with` | ⭐⭐ Intermediate | 🚧 Framework |
-| 05 | **Exception Handling** | Try/except, custom exceptions | ⭐⭐ Intermediate | 🚧 Framework |
-| 06 | **Classes & Magic Methods** | OOP, dunder methods | ⭐⭐ Intermediate | 🚧 Framework |
-| 07 | **🌐 Web Scraping** | requests, BeautifulSoup | ⭐⭐⭐ Advanced | 🚧 Framework |
-| 08 | **📊 Data Analysis** | NumPy, Pandas, visualization | ⭐⭐⭐ Advanced | 🚧 Framework |
-| 09 | **🔌 REST API** | Flask, routing, JSON | ⭐⭐⭐ Advanced | 🚧 Framework |
-| 10 | **🤖 Automation** | File ops, CLI, scheduling | ⭐⭐⭐ Advanced | 🚧 Framework |
+✅ **First Principles**: Build everything from scratch before using libraries
+✅ **50 Projects**: Structured curriculum from "Hello World" to "Deploy an LLM"
+✅ **Production Quality**: Heavy documentation, type hints, comprehensive tests
+✅ **Math Intuition**: Linear algebra, calculus, and autodiff explained visually
+✅ **Full Stack**: From pure Python → NumPy → PyTorch → Transformers
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-
-- Python 3.8 or higher
-- Basic programming knowledge (variables, loops, functions)
-- A curious mind!
+- Python 3.12.12 installed
+- Basic programming knowledge (any language)
+- 4-8 GB RAM (16 GB for Phase IV transformer training)
+- Curiosity and willingness to debug!
 
 ### Installation
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/python-edu.git
+git clone <your-repo-url>
 cd python-edu
 
-# 2. Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+# 2. Create virtual environment (Python 3.12 required)
+python3.12 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# 3. Install dependencies
-pip install -r requirements.txt
+# 3. Install dependencies (phases unlock incrementally)
+pip install --upgrade pip
+pip install -r requirements-dev.txt
 
-# 4. Run tests to verify setup
-pytest
+# 4. Verify setup
+python --version  # Should show 3.12.12
+pytest --version
+python -c "import numpy; print(numpy.__version__)"
+python -c "import torch; print(torch.__version__)"
 
-# 5. Start with Project 1!
-cd 01-dynamic-typing-basics
-python main.py
+# 5. Run sample tests (should pass)
+pytest project-01-basic-python-syntax/test/ -v
 ```
 
-### Your First 10 Minutes
+### Your First 30 Minutes
 
 ```bash
-# Read the project overview
-cat 01-dynamic-typing-basics/README.md
+# Phase I starts with ZERO dependencies (pure Python)
+cd project-01-basic-python-syntax
 
-# Run the interactive demo
-python 01-dynamic-typing-basics/main.py
+# Read the comprehensive README
+cat README.md
 
-# Read the DETAILED solution (every line explained!)
-cat 01-dynamic-typing-basics/solution.py
+# Study the exercise (with TODOs and hints)
+cat exercise.py
 
-# Try implementing yourself
-# Edit 01-dynamic-typing-basics/lib.py
+# Check the solution (HEAVILY commented)
+cat solution/solution.py
 
-# Run tests
-pytest 01-dynamic-typing-basics/test_solution.py -v
+# Read the human-friendly walkthrough
+cat solution_in_words.md
+
+# Run the tests
+pytest test/test_project_01.py -v
+
+# Try implementing yourself!
+python exercise.py
 ```
+
+---
+
+## 📚 Curriculum Overview
+
+### Phase I: Python & Data Structures (Projects 01–15)
+**Goal**: Master Python syntax and ace coding interviews
+
+```
+01. Basic Python Syntax        ⭐
+02. Control Flow & Loops        ⭐
+03. Functions & Modules         ⭐
+04. Lists & Tuples              ⭐
+05. Dictionaries & Sets         ⭐
+06. OOP Basics                  ⭐⭐
+07. OOP Advanced                ⭐⭐
+08. Recursion & Divide-Conquer  ⭐⭐
+09. Searching Algorithms        ⭐⭐
+10. Sorting Algorithms          ⭐⭐
+11. Stack & Queue               ⭐⭐
+12. Linked Lists                ⭐⭐
+13. Binary Trees                ⭐⭐⭐
+14. Graphs & Traversal          ⭐⭐⭐
+15. Dynamic Programming         ⭐⭐⭐
+```
+
+**Dependencies**: NONE (pure Python standard library)
+
+---
+
+### Phase II: ML Math & Autodiff (Projects 16–30)
+**Goal**: Build neural networks from scratch (no frameworks)
+
+```
+16. NumPy 101                   ⭐⭐
+17. NumPy Advanced              ⭐⭐
+18. Linear Algebra Essentials   ⭐⭐
+19. Gradient Descent Basics     ⭐⭐
+20. Linear Regression           ⭐⭐
+21. Logistic Regression         ⭐⭐
+22. Activation Functions        ⭐⭐
+23. Manual Backpropagation      ⭐⭐⭐
+24. Autodiff Engine             ⭐⭐⭐
+25. MLP from Scratch            ⭐⭐⭐
+26. Model Evaluation            ⭐⭐
+27. Regularization              ⭐⭐
+28. Hyperparameter Tuning       ⭐⭐
+29. Batch Gradient Descent      ⭐⭐
+30. MNIST NumPy Capstone        ⭐⭐⭐
+```
+
+**New Dependencies**: `numpy`, `matplotlib`
+**Milestone**: Train a neural network that recognizes handwritten digits—in pure NumPy!
+
+---
+
+### Phase III: PyTorch Systems (Projects 31–40)
+**Goal**: Production deep learning with PyTorch
+
+```
+31. PyTorch Tensors & GPU       ⭐⭐
+32. PyTorch Autograd            ⭐⭐
+33. PyTorch Modules             ⭐⭐
+34. PyTorch MNIST Training      ⭐⭐
+35. CNN on CIFAR-10             ⭐⭐⭐
+36. Text Classification (IMDB)  ⭐⭐⭐
+37. Advanced Training           ⭐⭐
+38. Transfer Learning           ⭐⭐⭐
+39. Char-RNN (Shakespeare)      ⭐⭐⭐
+40. Seq2Seq + Attention         ⭐⭐⭐
+```
+
+**New Dependencies**: `torch`, `torchvision`, `torchtext`
+**Milestone**: Train CNNs, RNNs, and understand attention mechanisms
+
+---
+
+### Phase IV: Transformers & LLMs (Projects 41–50)
+**Goal**: Build and deploy GPT-style models
+
+```
+41. Scaled Dot-Product Attention  ⭐⭐⭐
+42. Transformer Blocks            ⭐⭐⭐
+43. GPT Decoder Model             ⭐⭐⭐⭐
+44. Tokenization (BPE)            ⭐⭐⭐
+45. BabyGPT Training              ⭐⭐⭐⭐
+46. LLM Inference & Decoding      ⭐⭐⭐
+47. Model Quantization            ⭐⭐⭐
+48. LLM Serving API               ⭐⭐⭐
+49. RAG System                    ⭐⭐⭐⭐
+50. LLM System Design             ⭐⭐⭐⭐
+```
+
+**New Dependencies**: `einops`, `sentencepiece`, `transformers`, `faiss-cpu`, `fastapi`
+**Milestone**: Train a GPT from scratch, deploy it behind an API, and build a RAG system
 
 ---
 
 ## 📖 Learning Paths
 
-### 🎓 For Complete Beginners
+### 🎓 Complete Beginner (6-12 months)
+**Start at Project 01**, work sequentially through all 50 projects.
 
-**Time Investment:** ~8-10 hours
+**Time**: ~6-10 hours/week × 24-48 weeks
 
-1. **Start Here** - Read [PYTHON_BASICS.md](./PYTHON_BASICS.md) (30 min)
-2. **Project 1** - Dynamic Typing (1 hour)
-3. **Project 2** - List Comprehensions (1.5 hours)
-4. **Project 3** - Decorators (1.5 hours)
-5. **Project 4** - Context Managers (1 hour)
-6. **Project 5** - Exception Handling (1 hour)
-7. **Project 6** - Classes & OOP (2 hours)
-8. **Pick One** - Choose from Projects 7-10 based on interest
+### 💼 Experienced Programmer (3-6 months)
+**Skim Phase I** (01-15), focus on Python idioms.
+**Deep dive Phase II-IV** (16-50).
 
-### 💼 For Experienced Programmers (from other languages)
+**Time**: ~10-15 hours/week × 12-24 weeks
 
-**Time Investment:** ~4-5 hours
+### 🤖 ML Engineer (2-4 months)
+**Skip to Project 16** (NumPy).
+If comfortable with PyTorch, start at **Project 31**.
+Focus heavily on **Phase IV** (Transformers).
 
-1. **Skim** - Projects 1-2 for Python idioms (30 min)
-2. **Focus** - Project 2 (List Comprehensions) - Python's superpower! (45 min)
-3. **Deep Dive** - Project 3 (Decorators) - Unique to Python (1 hour)
-4. **Real-World** - Projects 7-10, pick your domain (2-3 hours)
+**Time**: ~15-20 hours/week × 8-16 weeks
 
-### 📊 For Data Scientists
+### 🚀 Interviewing for FAANG?
+**Focus on Phase I** (01-15): Data structures, algorithms, complexity analysis.
 
-**Time Investment:** ~3-4 hours
-
-1. **Quick Review** - Projects 1-2 (30 min)
-2. **Essential** - Project 2 (Comprehensions for data wrangling) (30 min)
-3. **Core Skills** - Project 8 (Pandas/NumPy) (2 hours)
-4. **Bonus** - Project 7 (Web Scraping) + Project 10 (Automation) (1-2 hours)
-
-### 🌐 For Web Developers
-
-**Time Investment:** ~4-5 hours
-
-1. **Foundations** - Projects 1-3 (2 hours)
-2. **Web API** - Project 9 (Flask REST API) (1.5 hours)
-3. **Data Collection** - Project 7 (Web Scraping) (1 hour)
-4. **DevOps** - Project 10 (Automation) (1 hour)
+**Time**: ~20 hours/week × 4-6 weeks
 
 ---
 
-## 🎯 What You'll Learn
+## 🎯 By Project 50, You Will Have
 
-### Core Python Concepts
+✅ **Implemented from scratch**:
+- Core algorithms (sorting, search, graphs, DP)
+- Neural network training (backprop, autodiff)
+- Transformer architecture (attention, FFN, LayerNorm)
+- GPT-style decoder model
+- Text tokenizer (BPE)
 
-#### 1. Dynamic Typing & Duck Typing (Project 1)
-```python
-# Python doesn't care about types, only behavior
-def double(x):
-    return x * 2
+✅ **Trained real models**:
+- MNIST digit classifier (NumPy only!)
+- CIFAR-10 CNN (ResNet-style)
+- IMDB sentiment classifier (LSTM/Embedding)
+- BabyGPT language model (WikiText-2)
 
-double(5)        # 10 (int)
-double("hi")     # "hihi" (str)
-double([1, 2])   # [1, 2, 1, 2] (list)
+✅ **Deployed systems**:
+- REST API for LLM inference (FastAPI)
+- RAG question-answering system (vector DB + LLM)
 
-# This is "duck typing": if it walks like a duck and quacks like a duck...
-# Trade-off: Flexibility vs. Runtime errors
-```
-
-#### 2. Comprehensions - Python's Superpower (Project 2)
-```python
-# The Pythonic way to transform data
-squares = [x**2 for x in range(10)]  # List comprehension
-evens_set = {x for x in range(100) if x % 2 == 0}  # Set comprehension
-word_lengths = {word: len(word) for word in ["hi", "hello"]}  # Dict
-
-# Memory efficient with generators
-squares_gen = (x**2 for x in range(1_000_000))  # Lazy evaluation!
-```
-
-#### 3. Decorators - Metaprogramming Magic (Project 3)
-```python
-# Modify functions without changing their code
-@timer
-@cache
-def expensive_function(n):
-    # Function behavior + timing + caching!
-    pass
-```
-
-### Real-World Applications
-
-#### 🌐 Web Scraping (Project 7)
-```python
-# Extract data from websites
-import requests
-from bs4 import BeautifulSoup
-
-response = requests.get('https://example.com/products')
-soup = BeautifulSoup(response.text, 'html.parser')
-prices = [item.find('span', class_='price').text
-          for item in soup.find_all('div', class_='product')]
-```
-
-#### 📊 Data Analysis (Project 8)
-```python
-# Analyze real datasets with Pandas
-import pandas as pd
-
-df = pd.read_csv('sales_data.csv')
-monthly_revenue = df.groupby('month')['revenue'].sum()
-top_products = df.nlargest(10, 'sales')
-```
-
-#### 🔌 REST API (Project 9)
-```python
-# Build a production API with Flask
-from flask import Flask, jsonify
-
-app = Flask(__name__)
-
-@app.route('/api/users/<int:user_id>')
-def get_user(user_id):
-    return jsonify({'id': user_id, 'name': 'Alice'})
-```
-
-#### 🤖 Automation (Project 10)
-```python
-# Automate repetitive tasks
-import schedule
-
-def backup_database():
-    # Automated daily backups!
-    pass
-
-schedule.every().day.at("02:00").do(backup_database)
-```
+✅ **Mastered concepts**:
+- Python internals (types, memory, GIL)
+- Complexity analysis (Big-O, space/time)
+- Linear algebra & calculus for ML
+- Numerical stability & optimization
+- GPU programming basics
+- Production ML systems
 
 ---
 
-## 💡 Key Insights You'll Gain
+## 📂 Project Structure
 
-### 1. When to Choose Python (and when not to)
-
-#### ✅ Python Excels At:
-- **Rapid prototyping** - Get ideas to code fast
-- **Data science** - NumPy/Pandas are battle-tested
-- **Automation** - Perfect for scripts and tools
-- **Web backends** - Django/Flask are production-ready
-- **Machine learning** - PyTorch/TensorFlow ecosystem
-- **Glue code** - Connecting different systems
-
-#### ❌ Python Struggles With:
-- **Mobile apps** - Use Swift/Kotlin/React Native
-- **Embedded systems** - Use C/Rust
-- **High-frequency trading** - Use C++/Rust
-- **Game engines** - Use C++/C#
-- **Real-time systems** - Use Rust/C
-- **Desktop GUIs** - Use Electron/Qt (C++)
-
-### 2. Python's Secret Weapon: The C Extension Ecosystem
-
-```python
-# Pure Python: Slow for number crunching
-total = sum([x**2 for x in range(1_000_000)])  # ~100ms
-
-# NumPy (C extension): Fast!
-import numpy as np
-total = np.sum(np.arange(1_000_000) ** 2)      # ~5ms (20x faster!)
-```
-
-**Lesson:** Python is slow, but **Python + C extensions = Fast enough for most tasks!**
-
-### 3. The Pythonic Way: Readable > Clever
-
-```python
-# ❌ Clever but hard to read
-result = list(map(lambda x: x**2, filter(lambda x: x%2==0, range(10))))
-
-# ✅ Pythonic: Clear intent
-result = [x**2 for x in range(10) if x % 2 == 0]
-
-# The Zen of Python: "Readability counts"
-```
-
-### 4. When Performance Actually Matters
-
-```python
-# For a web API handling 1,000 requests/second:
-# - Response time: 50ms (plenty fast!)
-# - Python overhead: ~5ms (10% of budget)
-# - Database query: ~40ms (80% of budget)
-#
-# Optimization target: DATABASE, not Python!
-# Lesson: Profile before optimizing. Python is rarely the bottleneck.
-```
-
----
-
-## 📂 Repository Structure
+Each of the 50 projects follows this structure:
 
 ```
-python-edu/
-├── README.md                    # You are here!
-├── PYTHON_BASICS.md             # Quick syntax reference
-├── PROJECT_SUMMARY.md           # Implementation status
-├── INDEX.md                     # Quick access guide
-├── requirements.txt             # All dependencies
-│
-├── 01-dynamic-typing-basics/
-│   ├── README.md                # Project overview & learning objectives
-│   ├── lib.py                   # TODO: Your implementation here
-│   ├── main.py                  # Interactive demo runner
-│   ├── solution.py              # DETAILED reference (~957 lines!)
-│   └── test_solution.py         # Comprehensive test suite
-│
-├── 02-list-comprehensions/
-│   ├── README.md
-│   ├── lib.py
-│   ├── main.py
-│   ├── solution.py              # EXTREME detail (~1,225 lines!)
-│   └── test_solution.py
-│
-├── 03-decorators-metaprogramming/
-├── 04-context-managers/
-├── 05-exception-handling/
-├── 06-classes-magic-methods/
-├── 07-web-scraping/             # 🌐 Real-world project
-├── 08-data-analysis-pandas/     # 📊 Real-world project
-├── 09-rest-api-flask/           # 🔌 Real-world project
-└── 10-automation-scripting/     # 🤖 Real-world project
+project-NN-name/
+├── README.md                # What, Why, When, Pitfalls, How
+├── exercise.py              # Your playground (TODOs + hints)
+├── solution/
+│   └── solution.py          # Full implementation (HEAVILY commented)
+├── test/
+│   └── test_project_NN.py   # Pytest suite (positive, edge, property tests)
+├── notebook.ipynb           # Jupyter notebook (Phase II+)
+└── solution_in_words.md     # Human-readable walkthrough + ASCII diagrams
 ```
 
-### File Structure (Each Project)
-
-- **README.md** - Learning objectives, concepts, plain English examples
-- **lib.py** - Stub functions for you to implement (learning by doing!)
-- **main.py** - Interactive demo showing the concepts in action
-- **solution.py** - DETAILED reference with line-by-line explanations
-- **test_solution.py** - Comprehensive tests (happy path + edge cases)
-
----
-
-## 🔥 Extreme Documentation Philosophy
-
-Every `solution.py` file contains **extreme detail**:
-
-### 1. Module-Level Documentation (200+ lines)
-```python
-"""
-PROJECT 02: LIST COMPREHENSIONS - PYTHON'S SUPERPOWER
-=====================================================
-
-WHAT YOU'LL LEARN:
-- List comprehensions: [x for x in items if condition]
-- Dict comprehensions: {k: v for k, v in items}
-- Set comprehensions: {x for x in items}
-- Generator expressions: (x for x in items) - Lazy evaluation!
-- Performance implications
-- Memory efficiency patterns
-
-WHY THIS MATTERS:
-List comprehensions are one of Python's most distinctive features...
-[continues for 200+ lines]
-"""
-```
-
-### 2. Function-Level Documentation
-```python
-def filter_even_numbers(numbers: list[int]) -> list[int]:
-    """
-    Filter a list to return only even numbers.
-
-    PARAMETERS:
-        numbers: list[int] - List of integers to filter
-
-    RETURNS:
-        list[int] - New list containing only even numbers
-
-    MEMORY/OWNERSHIP:
-        - Creates a NEW list (does not modify input)
-        - O(n) space complexity
-        - Input list is not mutated
-
-    USAGE:
-        >>> filter_even_numbers([1, 2, 3, 4])
-        [2, 4]
-
-    PERFORMANCE:
-        - Time: O(n) - Single pass through list
-        - Space: O(n) - New list in worst case
-    """
-```
-
-### 3. Line-by-Line Inline Comments
-```python
-# [x for x in numbers if x % 2 == 0]
-# │ │      │    │      │  │  │  └─ Zero (even numbers have 0 remainder)
-# │ │      │    │      │  │  └─ Equality comparison operator
-# │ │      │    │      │  └─ Modulo operator (returns remainder)
-# │ │      │    │      └─ Filtering condition (must be True)
-# │ │      │    └─ Variable binding in iteration
-# │ │      └─ Source iterable
-# │ └─ Expression to evaluate (what to include in result)
-# └─ Opening bracket (list comprehension syntax)
-```
-
-### 4. Performance Analysis
-```python
-# ========================================================================
-# PERFORMANCE COMPARISON
-# ========================================================================
-#
-# Python list comprehension:    ~30ms for 1,000,000 items
-# Rust equivalent:              ~0.2ms (150x faster!)
-# Go equivalent:                ~0.5ms (60x faster!)
-# JavaScript filter:            ~45ms (1.5x slower)
-#
-# TRADE-OFF ANALYSIS:
-# - Python: 30 seconds to write, 30ms to run
-# - Rust:   5 minutes to write, 0.2ms to run
-# - For most applications: Developer time > CPU time!
-# - For high-frequency trading: Use Rust/C++
-# - For web APIs: Python is perfectly fine!
-```
-
-### 5. Multi-Language Comparisons
-```python
-# ========================================================================
-# SAME LOGIC IN DIFFERENT LANGUAGES
-# ========================================================================
-#
-# Python:
-evens = [x for x in range(100) if x % 2 == 0]
-
-# Rust:
-let evens: Vec<i32> = (0..100)
-    .filter(|x| x % 2 == 0)
-    .collect();
-
-# Go:
-var evens []int
-for i := 0; i < 100; i++ {
-    if i % 2 == 0 {
-        evens = append(evens, i)
-    }
-}
-
-# JavaScript:
-const evens = Array.from({length: 100}, (_, i) => i)
-    .filter(x => x % 2 === 0);
-```
+### README Template (10 Sections)
+1. **What** — Mechanics & code concepts
+2. **Why** — Math, architecture, intuition
+3. **When** — Real-world applicability
+4. **Pitfalls** — Common bugs & gotchas
+5. **Performance** — Time/space complexity, CPU vs GPU
+6. **Diagrams** — ASCII art visualizations
+7. **Walkthrough** — Step-by-step reasoning
+8. **Cross-language** — Python vs Rust/C/JS/Go
+9. **Challenges** — Advanced extensions
+10. **How to Run** — Test commands + expected output
 
 ---
 
 ## 🧪 Testing Philosophy
 
-Every project includes comprehensive tests:
+Every project includes comprehensive pytest suites:
 
-```python
-# test_solution.py
-
-def test_filter_even_numbers_basic():
-    """Happy path: Normal input"""
-    assert filter_even_numbers([1, 2, 3, 4]) == [2, 4]
-
-def test_filter_even_numbers_empty():
-    """Edge case: Empty list"""
-    assert filter_even_numbers([]) == []
-
-def test_filter_even_numbers_all_odd():
-    """Edge case: No even numbers"""
-    assert filter_even_numbers([1, 3, 5]) == []
-
-def test_filter_even_numbers_large():
-    """Performance: Large dataset"""
-    result = filter_even_numbers(list(range(1_000_000)))
-    assert len(result) == 500_000
-```
-
-Run tests with:
 ```bash
-pytest                          # Run all tests
-pytest -v                       # Verbose output
-pytest --cov                    # With coverage report
-pytest 01-dynamic-typing-basics/ # Specific project
+# Run all tests
+pytest
+
+# Run tests for specific phase
+pytest -m phase1
+pytest -m "phase2 or phase3"
+
+# Run single project
+pytest project-05-dictionaries-sets/test/
+
+# With coverage
+pytest --cov=. --cov-report=html
+
+# Verbose + show print statements
+pytest -v -s
+
+# Stop at first failure
+pytest -x
+
+# Run only slow tests
+pytest -m slow
+
+# Skip slow tests
+pytest -m "not slow"
 ```
 
----
-
-## 📊 Statistics
-
-- **Total Lines of Code:** 10,000+ (when complete)
-- **Documentation Lines:** 6,000+ (extreme detail!)
-- **Test Cases:** 200+
-- **Projects:** 10 (2 complete, 8 frameworks ready)
-- **Concepts Covered:** 50+
-- **Code Examples:** 300+
-- **Performance Benchmarks:** 50+
+**Test categories**:
+- ✅ Positive (happy path)
+- ✅ Edge cases (empty, None, boundary)
+- ✅ Error handling (invalid inputs)
+- ✅ Property-based (Hypothesis, optional)
+- ✅ Performance (benchmarks where relevant)
 
 ---
 
-## 🎓 The Zen of Python
+## 📚 Documentation & References
 
+### Root Documentation
+- [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) — 50-project curriculum
+- [PYTHON_BASICS.md](./PYTHON_BASICS.md) — Syntax quick reference
+- [DSA_PRIMER.md](./DSA_PRIMER.md) — Algorithm patterns & Big-O
+- [MACHINE_LEARNING_MATH.md](./MACHINE_LEARNING_MATH.md) — Linear algebra, calculus, probability
+- [AUTODIFF_FROM_SCRATCH.md](./AUTODIFF_FROM_SCRATCH.md) — Building backpropagation intuition
+- [PYTORCH_INTERNALS.md](./PYTORCH_INTERNALS.md) — How PyTorch works under the hood
+- [TRANSFORMERS_EXPLAINED.md](./TRANSFORMERS_EXPLAINED.md) — Attention mechanism deep dive
+- [GPU_PRIMER.md](./GPU_PRIMER.md) — CUDA, parallelism, hardware
+- [LLM_SYSTEMS_OVERVIEW.md](./LLM_SYSTEMS_OVERVIEW.md) — Production LLM architecture
+
+### External Resources
+- **Andrej Karpathy**: *Neural Networks: Zero to Hero* (YouTube)
+- **Vaswani et al.**: *Attention Is All You Need* (2017)
+- **Goodfellow et al.**: *Deep Learning* (book)
+- **PyTorch Docs**: https://pytorch.org/docs/
+- **HuggingFace**: https://huggingface.co/docs
+
+---
+
+## 🎓 Documentation Style
+
+### Extreme Detail Philosophy
+Every `solution/solution.py` contains:
+
+1. **Module docstring** (100-200 lines): Overview, concepts, usage
+2. **Function docstrings** (20-50 lines): Args, returns, complexity, examples
+3. **Inline comments** (every line): What, why, trade-offs
+4. **ASCII diagrams**: Visualize algorithms & data flow
+5. **Performance notes**: Big-O, benchmarks, optimization tips
+6. **Cross-language comparisons**: Python vs Rust/C/JS
+
+**Example snippet**:
 ```python
-import this
-```
+"""
+Project 24: Autodiff Engine from Scratch
 
-```
-Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-...
-```
+Build a minimal automatic differentiation system (like micrograd).
 
-**This repository embodies these principles!**
+WHAT YOU'LL BUILD:
+- Tensor class with gradient tracking
+- Computation graph (DAG of operations)
+- Backward pass (reverse-mode autodiff)
+- Chain rule application
+- Support for: +, *, -, /, **, relu, exp, log
+
+WHY THIS MATTERS:
+Every modern DL framework (PyTorch, TensorFlow, JAX) uses autodiff.
+By building one yourself, you'll understand:
+- How .backward() works
+- Why requires_grad=True exists
+- How to debug gradient issues
+- The performance of backpropagation
+
+TIME COMPLEXITY: O(V + E) where V=nodes, E=edges in compute graph
+SPACE COMPLEXITY: O(V) for gradient storage
+"""
+
+class Tensor:
+    """
+    A tensor with automatic differentiation support.
+
+    Stores both the value (forward pass) and gradient (backward pass).
+    Builds a computation graph for backpropagation.
+
+    Attributes:
+        data: The actual value (float or ndarray)
+        grad: Accumulated gradient (same shape as data)
+        _backward: Function to propagate gradients to parents
+        _prev: Set of parent tensors (for graph traversal)
+        _op: Operation name (for debugging)
+    """
+    def __init__(self, data, _children=(), _op=''):
+        self.data = data
+        self.grad = 0.0  # Accumulated gradient
+        self._backward = lambda: None  # Closure for backprop
+        self._prev = set(_children)  # Parent nodes
+        self._op = _op  # '+', '*', 'relu', etc.
+
+    def __add__(self, other):
+        """
+        Addition operation with autodiff support.
+
+        Derivative rules:
+        - d(a + b)/da = 1
+        - d(a + b)/db = 1
+
+        Gradient flows equally to both operands.
+        """
+        other = other if isinstance(other, Tensor) else Tensor(other)
+        out = Tensor(self.data + other.data, (self, other), '+')
+
+        def _backward():
+            # Chain rule: grad flows from output to inputs
+            self.grad += out.grad  # Multiply by local gradient (1)
+            other.grad += out.grad
+        out._backward = _backward
+
+        return out
+```
 
 ---
 
 ## 🤝 Contributing
 
-While this is primarily a learning repository, contributions are welcome:
+This is a teaching repository—contributions welcome!
 
+**How to contribute**:
 1. **Found a bug?** Open an issue
-2. **Have a better explanation?** Submit a PR
-3. **Want to add a project?** Let's discuss!
+2. **Better explanation?** Submit a PR
+3. **Want to add content?** Discuss in issues first
 
-### Guidelines
-- Maintain the extreme documentation style
-- Include performance analysis
-- Add multi-language comparisons
-- Write comprehensive tests
-- Follow PEP 8 style guide
+**Style guidelines**:
+- Match existing documentation density
+- Include type hints everywhere
+- Add tests for new code
+- Cross-reference related projects
+- Use ASCII diagrams liberally
 
 ---
 
 ## 📜 License
 
-MIT License - feel free to use this for learning, teaching, or any purpose!
+MIT License — use freely for learning, teaching, or any purpose!
+
+See [LICENSE](./LICENSE) file for details.
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Python Software Foundation** - For creating an amazing language
-- **The Python Community** - For incredible libraries and tools
-- **Rust/Go/JS Communities** - For inspiration and comparison points
-- **You** - For investing time in learning Python the right way!
+**Inspired by**:
+- Andrej Karpathy's micrograd & nanoGPT
+- FastAI's teaching philosophy
+- SICP's first-principles approach
+- PyTorch & HuggingFace communities
+
+**Built for**:
+- Self-learners seeking depth
+- Bootcamp students needing rigor
+- CS students wanting practical skills
+- Engineers transitioning to ML/AI
 
 ---
 
 ## 🚀 Next Steps
 
-1. **[Read PYTHON_BASICS.md](./PYTHON_BASICS.md)** - Get familiar with syntax
-2. **[Check PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)** - See implementation status
-3. **[Start Project 1](./01-dynamic-typing-basics/)** - Begin your journey!
-4. **Join the conversation** - Share your experience, ask questions
+1. **Read** [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) — See full curriculum
+2. **Install** dependencies — `pip install -r requirements-dev.txt`
+3. **Start** [Project 01](./project-01-basic-python-syntax/) — Begin your journey!
+4. **Join** discussions — Share progress, ask questions, help others
 
 ---
 
-## 💬 Final Thoughts
+## 💡 Final Thoughts
 
-> "This repository doesn't just teach Python syntax. It teaches you **why Python makes certain choices**, **when those choices are right**, and **how to leverage Python's strengths**."
+> *"Understanding beats memorization. Building beats watching tutorials."*
 
-Python isn't the fastest language. It's not the most type-safe. But for:
-- Rapid development ✅
-- Readable code ✅
-- Massive ecosystem ✅
-- Data science ✅
-- Automation ✅
-- Web backends ✅
+This repository is **not**:
+- ❌ A quick tutorial
+- ❌ Copy-paste code snippets
+- ❌ Surface-level explanations
 
-**Python is unbeatable.**
+This repository **is**:
+- ✅ A rigorous, first-principles curriculum
+- ✅ Production-quality code with extreme documentation
+- ✅ A path from "Hello World" to "I built GPT"
 
-This repository helps you understand **when and why** to choose Python, and how to use it effectively.
+By Project 50, you won't just know *how* to use PyTorch or transformers—you'll understand **why they work**, **when to use them**, and **how to build them yourself**.
 
 ---
 
-**Happy Learning! 🐍✨**
+**Happy learning! 🐍 → 🤖 → 🚀**
 
-*Remember: Code is read more than it's written. Write for humans first, computers second.*
+*Code is read more often than it's written. This repo optimizes for learning, not brevity.*
+
+Last updated: 2025-11-16
