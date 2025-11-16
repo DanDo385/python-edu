@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  python-edu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: python-edu:latest
+    container_name: python-edu
+
+    # GPU support for NVIDIA GPUs
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+    # Port mapping: Jupyter Lab
+    ports:
+      - "8888:8888"
+
+    # Mount local directory for persistence
+    volumes:
+      - .:/workspace
+      - ./notebooks:/workspace/notebooks  # Optional: dedicated notebooks directory
+
+    # Environment variables
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - NVIDIA_VISIBLE_DEVICES=all
+      - CUDA_VISIBLE_DEVICES=0  # Change to specify GPU(s)
+      - PYTHONPATH=/workspace
+
+    # Keep container running
+    stdin_open: true
+    tty: true
+
+    # Restart policy
+    restart: unless-stopped
+
+    # Network mode
+    network_mode: bridge
+
+    # Optional: Add custom command
+    # command: jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+
+  # Optional: Add a service for TensorBoard (if needed later)
+  # tensorboard:
+  #   image: tensorflow/tensorflow:latest
+  #   container_name: tensorboard
+  #   ports:
+  #     - "6006:6006"
+  #   volumes:
+  #     - ./logs:/logs
+  #   command: tensorboard --logdir=/logs --host=0.0.0.0
+
+# Optional: Named volumes for better performance
+# volumes:
+#   jupyter-data:

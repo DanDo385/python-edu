@@ -1,484 +1,301 @@
-# 🐍 Python-50x-Minis: From Basics to Building GPT
+# AI Learning Curriculum: Python to LLMs (85 Projects)
 
-> **Master Python, Algorithms, Machine Learning Math, PyTorch, and LLMs through 50 progressive hands-on projects**
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Projects](https://img.shields.io/badge/projects-85-brightgreen.svg)](PROJECT_SUMMARY.md)
 
-[![Python 3.12.12](https://img.shields.io/badge/python-3.12.12-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Projects](https://img.shields.io/badge/projects-50-brightgreen.svg)](./PROJECT_SUMMARY.md)
+A comprehensive, project-based learning path from Python fundamentals to large language model (LLM) system design. This curriculum features **85 hands-on projects** that progressively build your skills from basic programming to cutting-edge AI applications.
 
----
+## 🎯 Overview
 
-## 🎯 What is This?
-
-**A complete, production-grade learning path** that takes you from Python syntax to training and serving GPT-style language models.  No hand-waving, no magic—just **first-principles understanding** with runnable code.
-
-### What Makes This Different?
-
-✅ **First Principles**: Build everything from scratch before using libraries
-✅ **50 Projects**: Structured curriculum from "Hello World" to "Deploy an LLM"
-✅ **Production Quality**: Heavy documentation, type hints, comprehensive tests
-✅ **Math Intuition**: Linear algebra, calculus, and autodiff explained visually
-✅ **Full Stack**: From pure Python → NumPy → PyTorch → Transformers
-
----
+This repository provides a complete learning journey integrating:
+- **Python Fundamentals** (Projects 1-10): Core language features and scripting
+- **Mathematical Foundations** (Projects 11-17): NumPy, calculus, and autodiff
+- **Supervised Machine Learning** (Projects 18-29): From linear regression to CNNs
+- **Unsupervised Learning** (Projects 30-32): Clustering, PCA, and autoencoders
+- **Sequence Models** (Projects 33-36): RNNs, LSTMs, and attention mechanisms
+- **NLP & Embeddings** (Projects 37-39): Word2Vec and semantic representations
+- **Advanced PyTorch** (Projects 40-44): Custom layers, optimizers, and data pipelines
+- **GPU Acceleration** (Projects 45-51): CUDA, Triton, and performance optimization
+- **Transformers & LLMs** (Projects 52-57): Building GPT-style models from scratch
+- **Tokenization** (Projects 58-61): BPE, SentencePiece, and text processing
+- **Training Infrastructure** (Projects 62-68): Distributed training, quantization, distillation
+- **Model Deployment** (Projects 69-74): FastAPI, Docker, and production systems
+- **RLHF & Alignment** (Projects 75-78): Training ChatGPT-style models
+- **Scaling & System Design** (Projects 79-82): Large-scale architecture planning
+- **Advanced Applications** (Projects 83-85): RAG, LoRA, and chatbot capstone
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.12.12 installed
-- Basic programming knowledge (any language)
-- 4-8 GB RAM (16 GB for Phase IV transformer training)
-- Curiosity and willingness to debug!
+- Python 3.10 or higher
+- (Optional) NVIDIA GPU with CUDA support or Apple Silicon (M1/M2/M3/M4) for GPU acceleration
+- 8GB+ RAM recommended (16GB+ for larger models)
 
 ### Installation
 
+1. **Clone the repository:**
 ```bash
-# 1. Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/DanDo385/python-edu.git
 cd python-edu
-
-# 2. Create virtual environment (Python 3.12 required)
-python3.12 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# 3. Install dependencies (phases unlock incrementally)
-pip install --upgrade pip
-pip install -r requirements-dev.txt
-
-# 4. Verify setup
-python --version  # Should show 3.12.12
-pytest --version
-python -c "import numpy; print(numpy.__version__)"
-python -c "import torch; print(torch.__version__)"
-
-# 5. Run sample tests (should pass)
-pytest project-01-basic-python-syntax/test/ -v
 ```
 
-### Your First 30 Minutes
+2. **Set up your environment:**
+```bash
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements-dev.txt
+```
+
+3. **Verify your setup:**
+```bash
+# Check Python version
+python --version
+
+# Test PyTorch installation
+python -c "import torch; print(f'PyTorch {torch.__version__}')"
+
+# Detect GPU (NVIDIA)
+python detect_nvidia_gpu.py
+
+# Detect GPU (Apple Metal)
+python detect_apple_metal_gpu.py
+
+# Auto-detect best backend
+python detect_accelerated_backend.py
+```
+
+4. **Start with Project 01:**
+```bash
+cd Projects/01-dynamic-typing-basics
+pytest tests/
+```
+
+## 📚 Documentation
+
+- **[SETUP.md](SETUP.md)**: Detailed environment setup for all platforms
+- **[GPU_GUIDE.md](GPU_GUIDE.md)**: GPU acceleration guide (NVIDIA CUDA & Apple Metal)
+- **[DOCKER.md](DOCKER.md)**: Containerized environment setup
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)**: Complete index of all 85 projects
+
+## 🗂️ Repository Structure
+
+```
+python-edu/
+├── Projects/                      # All 85 projects
+│   ├── 01-dynamic-typing-basics/
+│   │   ├── README.md             # Project objectives and tasks
+│   │   ├── solution_in_words.md  # Conceptual explanation
+│   │   ├── solution/             # Python solutions (.py + .ipynb)
+│   │   └── tests/                # Pytest test suite
+│   ├── 02-control-flow-loops/
+│   ├── ...
+│   └── 85-chatgpt-chatbot-capstone/
+├── README.md                      # This file
+├── PROJECT_SUMMARY.md             # Index of all projects
+├── SETUP.md                       # Environment setup guide
+├── GPU_GUIDE.md                   # GPU configuration details
+├── DOCKER.md                      # Docker usage guide
+├── Dockerfile                     # Container definition
+├── docker-compose.yml             # Multi-service orchestration
+├── detect_nvidia_gpu.py           # NVIDIA GPU detection
+├── detect_apple_metal_gpu.py      # Apple Metal detection
+├── detect_accelerated_backend.py  # Auto backend selection
+├── requirements-dev.txt           # All dependencies
+└── pytest.ini                     # Test configuration
+```
+
+## 🎓 Learning Path
+
+### Part 1: Python Fundamentals (Projects 1-10)
+Master Python basics: variables, control flow, functions, data structures, OOP, modules, error handling, file I/O, and automation scripting.
+
+### Part 2: Math & Autodiff (Projects 11-17)
+Build mathematical foundations for machine learning with NumPy, manual differentiation, backpropagation, autodiff engines, and gradient verification.
+
+### Part 3: Supervised ML (Projects 18-29)
+Implement ML algorithms from scratch: linear/logistic regression, neural networks, CNNs, and transfer learning. Master training, regularization, and model evaluation.
+
+### Part 4: Unsupervised Learning (Projects 30-32)
+Explore clustering (K-Means), dimensionality reduction (PCA), and neural compression (autoencoders).
+
+### Part 5: Sequence Models (Projects 33-36)
+Master RNNs, LSTMs, and attention mechanisms for sequential data and text generation.
+
+### Part 6: Word Embeddings (Projects 37-39)
+Learn representation learning with Word2Vec, pretrained embeddings, and semantic vector spaces.
+
+### Part 7: Advanced PyTorch (Projects 40-44)
+Build custom autograd functions, layers, optimizers, datasets, and training loops.
+
+### Part 8: GPU Acceleration (Projects 45-51)
+Optimize performance with CUDA, vectorization, Numba JIT, Triton kernels, profiling, and distributed training.
+
+### Part 9: Transformers & LLMs (Projects 52-57)
+Build transformer architectures from scratch: attention mechanisms, transformer blocks, GPT-style models, and BERT-style masked LM.
+
+### Part 10: Tokenization (Projects 58-61)
+Master text preprocessing with byte-pair encoding (BPE), SentencePiece, and integration with transformer models.
+
+### Part 11: Training Infrastructure (Projects 62-68)
+Learn advanced techniques: gradient checkpointing, mixed precision, quantization, pruning, knowledge distillation, and gradient accumulation.
+
+### Part 12: Model Deployment (Projects 69-74)
+Deploy models with FastAPI, batch inference, streaming responses, TorchScript/ONNX optimization, Docker, and scalable architectures.
+
+### Part 13: RLHF & Alignment (Projects 75-78)
+Train ChatGPT-style models with supervised fine-tuning, reward modeling, PPO, and safety evaluation.
+
+### Part 14: Scaling & Design (Projects 79-82)
+Understand scaling laws, compute-optimal training, and design systems for GPT-3/ChatGPT scale deployments.
+
+### Part 15: Advanced Applications (Projects 83-85)
+Build retrieval-augmented generation (RAG), parameter-efficient fine-tuning (LoRA), and a complete ChatGPT-style chatbot capstone.
+
+## 🧪 Testing
+
+Each project includes comprehensive pytest tests:
 
 ```bash
-# Phase I starts with ZERO dependencies (pure Python)
-cd project-01-basic-python-syntax
+# Run tests for a specific project
+cd Projects/01-dynamic-typing-basics
+pytest tests/ -v
 
-# Read the comprehensive README
-cat README.md
+# Run all tests in the curriculum
+pytest Projects/ -v
 
-# Study the exercise (with TODOs and hints)
-cat exercise.py
-
-# Check the solution (HEAVILY commented)
-cat solution/solution.py
-
-# Read the human-friendly walkthrough
-cat solution_in_words.md
-
-# Run the tests
-pytest test/test_project_01.py -v
-
-# Try implementing yourself!
-python exercise.py
+# Run with coverage
+pytest Projects/ --cov=. --cov-report=html
 ```
 
----
+## 🐳 Docker Usage
 
-## 📚 Curriculum Overview
+For a consistent, reproducible environment:
 
-### Phase I: Python & Data Structures (Projects 01–15)
-**Goal**: Master Python syntax and ace coding interviews
+```bash
+# Build and start container
+docker-compose up -d
 
-```
-01. Basic Python Syntax        ⭐
-02. Control Flow & Loops        ⭐
-03. Functions & Modules         ⭐
-04. Lists & Tuples              ⭐
-05. Dictionaries & Sets         ⭐
-06. OOP Basics                  ⭐⭐
-07. OOP Advanced                ⭐⭐
-08. Recursion & Divide-Conquer  ⭐⭐
-09. Searching Algorithms        ⭐⭐
-10. Sorting Algorithms          ⭐⭐
-11. Stack & Queue               ⭐⭐
-12. Linked Lists                ⭐⭐
-13. Binary Trees                ⭐⭐⭐
-14. Graphs & Traversal          ⭐⭐⭐
-15. Dynamic Programming         ⭐⭐⭐
+# Access Jupyter notebook
+# Navigate to http://localhost:8888
+
+# Run tests in container
+docker-compose exec python-edu pytest Projects/
+
+# Stop container
+docker-compose down
 ```
 
-**Dependencies**: NONE (pure Python standard library)
+See [DOCKER.md](DOCKER.md) for detailed instructions.
 
----
+## 💻 Hardware Support
 
-### Phase II: ML Math & Autodiff (Projects 16–30)
-**Goal**: Build neural networks from scratch (no frameworks)
+This curriculum supports multiple hardware configurations:
 
-```
-16. NumPy 101                   ⭐⭐
-17. NumPy Advanced              ⭐⭐
-18. Linear Algebra Essentials   ⭐⭐
-19. Gradient Descent Basics     ⭐⭐
-20. Linear Regression           ⭐⭐
-21. Logistic Regression         ⭐⭐
-22. Activation Functions        ⭐⭐
-23. Manual Backpropagation      ⭐⭐⭐
-24. Autodiff Engine             ⭐⭐⭐
-25. MLP from Scratch            ⭐⭐⭐
-26. Model Evaluation            ⭐⭐
-27. Regularization              ⭐⭐
-28. Hyperparameter Tuning       ⭐⭐
-29. Batch Gradient Descent      ⭐⭐
-30. MNIST NumPy Capstone        ⭐⭐⭐
-```
+- **NVIDIA GPUs**: Full CUDA support with cuDNN acceleration
+- **Apple Silicon (M1/M2/M3/M4)**: Metal Performance Shaders (MPS) backend
+- **CPU-only**: All projects run on CPU (may be slower for larger models)
 
-**New Dependencies**: `numpy`, `matplotlib`
-**Milestone**: Train a neural network that recognizes handwritten digits—in pure NumPy!
-
----
-
-### Phase III: PyTorch Systems (Projects 31–40)
-**Goal**: Production deep learning with PyTorch
-
-```
-31. PyTorch Tensors & GPU       ⭐⭐
-32. PyTorch Autograd            ⭐⭐
-33. PyTorch Modules             ⭐⭐
-34. PyTorch MNIST Training      ⭐⭐
-35. CNN on CIFAR-10             ⭐⭐⭐
-36. Text Classification (IMDB)  ⭐⭐⭐
-37. Advanced Training           ⭐⭐
-38. Transfer Learning           ⭐⭐⭐
-39. Char-RNN (Shakespeare)      ⭐⭐⭐
-40. Seq2Seq + Attention         ⭐⭐⭐
-```
-
-**New Dependencies**: `torch`, `torchvision`, `torchtext`
-**Milestone**: Train CNNs, RNNs, and understand attention mechanisms
-
----
-
-### Phase IV: Transformers & LLMs (Projects 41–50)
-**Goal**: Build and deploy GPT-style models
-
-```
-41. Scaled Dot-Product Attention  ⭐⭐⭐
-42. Transformer Blocks            ⭐⭐⭐
-43. GPT Decoder Model             ⭐⭐⭐⭐
-44. Tokenization (BPE)            ⭐⭐⭐
-45. BabyGPT Training              ⭐⭐⭐⭐
-46. LLM Inference & Decoding      ⭐⭐⭐
-47. Model Quantization            ⭐⭐⭐
-48. LLM Serving API               ⭐⭐⭐
-49. RAG System                    ⭐⭐⭐⭐
-50. LLM System Design             ⭐⭐⭐⭐
-```
-
-**New Dependencies**: `einops`, `sentencepiece`, `transformers`, `faiss-cpu`, `fastapi`
-**Milestone**: Train a GPT from scratch, deploy it behind an API, and build a RAG system
-
----
+GPU detection scripts automatically select the best available backend. See [GPU_GUIDE.md](GPU_GUIDE.md) for setup instructions.
 
 ## 📖 Learning Paths
 
-### 🎓 Complete Beginner (6-12 months)
-**Start at Project 01**, work sequentially through all 50 projects.
+### 🎓 Complete Beginner (9-15 months)
+Start at Project 01, work sequentially through all 85 projects.
+- **Time**: 8-12 hours/week × 36-60 weeks
 
-**Time**: ~6-10 hours/week × 24-48 weeks
+### 💼 Experienced Programmer (5-9 months)
+Skim Part 1 (Projects 1-10), deep dive Parts 2-15.
+- **Time**: 12-18 hours/week × 20-36 weeks
 
-### 💼 Experienced Programmer (3-6 months)
-**Skim Phase I** (01-15), focus on Python idioms.
-**Deep dive Phase II-IV** (16-50).
+### 🤖 ML Engineer (3-6 months)
+Skip to Project 11 (NumPy). If comfortable with PyTorch, start at Project 40.
+Focus heavily on Parts 9-15 (Transformers, LLMs, deployment).
+- **Time**: 15-25 hours/week × 12-24 weeks
 
-**Time**: ~10-15 hours/week × 12-24 weeks
+### 🚀 Focus Tracks
 
-### 🤖 ML Engineer (2-4 months)
-**Skip to Project 16** (NumPy).
-If comfortable with PyTorch, start at **Project 31**.
-Focus heavily on **Phase IV** (Transformers).
+**LLM Specialist**: Projects 1-3, 11-17, 40-85
+**ML Infrastructure**: Projects 11-29, 40-44, 45-51, 62-74
+**Python + Algorithms**: Projects 1-10, then explore data structures topics
 
-**Time**: ~15-20 hours/week × 8-16 weeks
-
-### 🚀 Interviewing for FAANG?
-**Focus on Phase I** (01-15): Data structures, algorithms, complexity analysis.
-
-**Time**: ~20 hours/week × 4-6 weeks
-
----
-
-## 🎯 By Project 50, You Will Have
+## 🎯 By Project 85, You Will Have
 
 ✅ **Implemented from scratch**:
-- Core algorithms (sorting, search, graphs, DP)
-- Neural network training (backprop, autodiff)
-- Transformer architecture (attention, FFN, LayerNorm)
-- GPT-style decoder model
-- Text tokenizer (BPE)
+- Python fundamentals and automation tools
+- Neural network training (backprop, autodiff, optimization)
+- Transformer architecture (attention, multi-head, positional encoding)
+- GPT-style decoder models
+- Text tokenizers (BPE, SentencePiece)
+- Training infrastructure (distributed, mixed-precision, quantization)
 
 ✅ **Trained real models**:
-- MNIST digit classifier (NumPy only!)
-- CIFAR-10 CNN (ResNet-style)
-- IMDB sentiment classifier (LSTM/Embedding)
-- BabyGPT language model (WikiText-2)
+- MNIST digit classifier (NumPy and PyTorch)
+- CIFAR-10 CNN with transfer learning
+- RNN/LSTM text generators
+- Transformer language models
+- RLHF-aligned chat models
 
 ✅ **Deployed systems**:
 - REST API for LLM inference (FastAPI)
-- RAG question-answering system (vector DB + LLM)
+- Streaming token generation
+- RAG question-answering system
+- Dockerized production services
+- ChatGPT-style web chatbot
 
 ✅ **Mastered concepts**:
-- Python internals (types, memory, GIL)
-- Complexity analysis (Big-O, space/time)
-- Linear algebra & calculus for ML
-- Numerical stability & optimization
-- GPU programming basics
-- Production ML systems
-
----
-
-## 📂 Project Structure
-
-Each of the 50 projects follows this structure:
-
-```
-project-NN-name/
-├── README.md                # What, Why, When, Pitfalls, How
-├── exercise.py              # Your playground (TODOs + hints)
-├── solution/
-│   └── solution.py          # Full implementation (HEAVILY commented)
-├── test/
-│   └── test_project_NN.py   # Pytest suite (positive, edge, property tests)
-├── notebook.ipynb           # Jupyter notebook (Phase II+)
-└── solution_in_words.md     # Human-readable walkthrough + ASCII diagrams
-```
-
-### README Template (10 Sections)
-1. **What** — Mechanics & code concepts
-2. **Why** — Math, architecture, intuition
-3. **When** — Real-world applicability
-4. **Pitfalls** — Common bugs & gotchas
-5. **Performance** — Time/space complexity, CPU vs GPU
-6. **Diagrams** — ASCII art visualizations
-7. **Walkthrough** — Step-by-step reasoning
-8. **Cross-language** — Python vs Rust/C/JS/Go
-9. **Challenges** — Advanced extensions
-10. **How to Run** — Test commands + expected output
-
----
-
-## 🧪 Testing Philosophy
-
-Every project includes comprehensive pytest suites:
-
-```bash
-# Run all tests
-pytest
-
-# Run tests for specific phase
-pytest -m phase1
-pytest -m "phase2 or phase3"
-
-# Run single project
-pytest project-05-dictionaries-sets/test/
-
-# With coverage
-pytest --cov=. --cov-report=html
-
-# Verbose + show print statements
-pytest -v -s
-
-# Stop at first failure
-pytest -x
-
-# Run only slow tests
-pytest -m slow
-
-# Skip slow tests
-pytest -m "not slow"
-```
-
-**Test categories**:
-- ✅ Positive (happy path)
-- ✅ Edge cases (empty, None, boundary)
-- ✅ Error handling (invalid inputs)
-- ✅ Property-based (Hypothesis, optional)
-- ✅ Performance (benchmarks where relevant)
-
----
-
-## 📚 Documentation & References
-
-### Root Documentation
-- [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) — 50-project curriculum
-- [PYTHON_BASICS.md](./PYTHON_BASICS.md) — Syntax quick reference
-- [DSA_PRIMER.md](./DSA_PRIMER.md) — Algorithm patterns & Big-O
-- [MACHINE_LEARNING_MATH.md](./MACHINE_LEARNING_MATH.md) — Linear algebra, calculus, probability
-- [AUTODIFF_FROM_SCRATCH.md](./AUTODIFF_FROM_SCRATCH.md) — Building backpropagation intuition
-- [PYTORCH_INTERNALS.md](./PYTORCH_INTERNALS.md) — How PyTorch works under the hood
-- [TRANSFORMERS_EXPLAINED.md](./TRANSFORMERS_EXPLAINED.md) — Attention mechanism deep dive
-- [GPU_PRIMER.md](./GPU_PRIMER.md) — CUDA, parallelism, hardware
-- [LLM_SYSTEMS_OVERVIEW.md](./LLM_SYSTEMS_OVERVIEW.md) — Production LLM architecture
-
-### External Resources
-- **Andrej Karpathy**: *Neural Networks: Zero to Hero* (YouTube)
-- **Vaswani et al.**: *Attention Is All You Need* (2017)
-- **Goodfellow et al.**: *Deep Learning* (book)
-- **PyTorch Docs**: https://pytorch.org/docs/
-- **HuggingFace**: https://huggingface.co/docs
-
----
-
-## 🎓 Documentation Style
-
-### Extreme Detail Philosophy
-Every `solution/solution.py` contains:
-
-1. **Module docstring** (100-200 lines): Overview, concepts, usage
-2. **Function docstrings** (20-50 lines): Args, returns, complexity, examples
-3. **Inline comments** (every line): What, why, trade-offs
-4. **ASCII diagrams**: Visualize algorithms & data flow
-5. **Performance notes**: Big-O, benchmarks, optimization tips
-6. **Cross-language comparisons**: Python vs Rust/C/JS
-
-**Example snippet**:
-```python
-"""
-Project 24: Autodiff Engine from Scratch
-
-Build a minimal automatic differentiation system (like micrograd).
-
-WHAT YOU'LL BUILD:
-- Tensor class with gradient tracking
-- Computation graph (DAG of operations)
-- Backward pass (reverse-mode autodiff)
-- Chain rule application
-- Support for: +, *, -, /, **, relu, exp, log
-
-WHY THIS MATTERS:
-Every modern DL framework (PyTorch, TensorFlow, JAX) uses autodiff.
-By building one yourself, you'll understand:
-- How .backward() works
-- Why requires_grad=True exists
-- How to debug gradient issues
-- The performance of backpropagation
-
-TIME COMPLEXITY: O(V + E) where V=nodes, E=edges in compute graph
-SPACE COMPLEXITY: O(V) for gradient storage
-"""
-
-class Tensor:
-    """
-    A tensor with automatic differentiation support.
-
-    Stores both the value (forward pass) and gradient (backward pass).
-    Builds a computation graph for backpropagation.
-
-    Attributes:
-        data: The actual value (float or ndarray)
-        grad: Accumulated gradient (same shape as data)
-        _backward: Function to propagate gradients to parents
-        _prev: Set of parent tensors (for graph traversal)
-        _op: Operation name (for debugging)
-    """
-    def __init__(self, data, _children=(), _op=''):
-        self.data = data
-        self.grad = 0.0  # Accumulated gradient
-        self._backward = lambda: None  # Closure for backprop
-        self._prev = set(_children)  # Parent nodes
-        self._op = _op  # '+', '*', 'relu', etc.
-
-    def __add__(self, other):
-        """
-        Addition operation with autodiff support.
-
-        Derivative rules:
-        - d(a + b)/da = 1
-        - d(a + b)/db = 1
-
-        Gradient flows equally to both operands.
-        """
-        other = other if isinstance(other, Tensor) else Tensor(other)
-        out = Tensor(self.data + other.data, (self, other), '+')
-
-        def _backward():
-            # Chain rule: grad flows from output to inputs
-            self.grad += out.grad  # Multiply by local gradient (1)
-            other.grad += out.grad
-        out._backward = _backward
-
-        return out
-```
-
----
+- Python internals and best practices
+- Linear algebra, calculus, and optimization for ML
+- GPU programming (CUDA, Triton, MPS)
+- Transformer architectures and attention
+- LLM training, fine-tuning, and alignment
+- Production ML systems and scalability
+- Scaling laws and system design
 
 ## 🤝 Contributing
 
-This is a teaching repository—contributions welcome!
+Contributions are welcome! Please:
 
-**How to contribute**:
-1. **Found a bug?** Open an issue
-2. **Better explanation?** Submit a PR
-3. **Want to add content?** Discuss in issues first
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/improvement`)
+3. Make your changes with tests
+4. Submit a pull request
 
-**Style guidelines**:
-- Match existing documentation density
-- Include type hints everywhere
-- Add tests for new code
-- Cross-reference related projects
-- Use ASCII diagrams liberally
+## 📖 Additional Resources
 
----
+- [PyTorch Documentation](https://pytorch.org/docs/)
+- [Hugging Face Transformers](https://huggingface.co/docs/transformers/)
+- [NumPy User Guide](https://numpy.org/doc/stable/user/)
+- [OpenAI Research](https://openai.com/research/)
+- [Attention Is All You Need (Vaswani et al., 2017)](https://arxiv.org/abs/1706.03762)
+- [Training language models to follow instructions with human feedback (Ouyang et al., 2022)](https://arxiv.org/abs/2203.02155)
 
-## 📜 License
+## 📄 License
 
-MIT License — use freely for learning, teaching, or any purpose!
-
-See [LICENSE](./LICENSE) file for details.
-
----
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-**Inspired by**:
-- Andrej Karpathy's micrograd & nanoGPT
-- FastAI's teaching philosophy
-- SICP's first-principles approach
-- PyTorch & HuggingFace communities
+This curriculum draws inspiration from:
+- The "Attention Is All You Need" paper (Vaswani et al., 2017)
+- OpenAI's GPT and ChatGPT research
+- Andrej Karpathy's educational content (micrograd, nanoGPT)
+- Stanford CS231n and CS224n courses
+- Fast.ai courses
+- PyTorch and Hugging Face communities
 
-**Built for**:
-- Self-learners seeking depth
-- Bootcamp students needing rigor
-- CS students wanting practical skills
-- Engineers transitioning to ML/AI
+## 📧 Contact
 
----
-
-## 🚀 Next Steps
-
-1. **Read** [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) — See full curriculum
-2. **Install** dependencies — `pip install -r requirements-dev.txt`
-3. **Start** [Project 01](./project-01-basic-python-syntax/) — Begin your journey!
-4. **Join** discussions — Share progress, ask questions, help others
+For questions or feedback, please open an issue on GitHub.
 
 ---
 
-## 💡 Final Thoughts
+**Start your journey from Python basics to building ChatGPT-style systems today!** 🚀
 
-> *"Understanding beats memorization. Building beats watching tutorials."*
-
-This repository is **not**:
-- ❌ A quick tutorial
-- ❌ Copy-paste code snippets
-- ❌ Surface-level explanations
-
-This repository **is**:
-- ✅ A rigorous, first-principles curriculum
-- ✅ Production-quality code with extreme documentation
-- ✅ A path from "Hello World" to "I built GPT"
-
-By Project 50, you won't just know *how* to use PyTorch or transformers—you'll understand **why they work**, **when to use them**, and **how to build them yourself**.
-
----
-
-**Happy learning! 🐍 → 🤖 → 🚀**
-
-*Code is read more often than it's written. This repo optimizes for learning, not brevity.*
+*"Understanding beats memorization. Building beats watching tutorials."*
 
 Last updated: 2025-11-16

@@ -1,0 +1,10 @@
+"""
+Tests for Project 85: ChatGPT-style Chatbot (Capstone Application)
+"""
+
+import pytest
+
+
+def test_placeholder():
+    """Placeholder test - replace with actual tests."""
+    assert True
