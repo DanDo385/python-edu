@@ -1,0 +1,17 @@
+# Project 22: Hash Map Problems - Solution Explained
+
+## Concept Overview
+
+[Explanation of Hash Map Problems]
+
+## Approach
+
+[Problem-solving approach]
+
+## Complexity Analysis
+
+[Time and space complexity]
+
+## Key Takeaways
+
+[Important lessons]

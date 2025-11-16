@@ -1,301 +1,266 @@
-# AI Learning Curriculum: Python to LLMs (85 Projects)
+# Python Learning Hub: DSA + AI Curriculum
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Projects](https://img.shields.io/badge/projects-85-brightgreen.svg)](PROJECT_SUMMARY.md)
 
-A comprehensive, project-based learning path from Python fundamentals to large language model (LLM) system design. This curriculum features **85 hands-on projects** that progressively build your skills from basic programming to cutting-edge AI applications.
-
-## 🎯 Overview
-
-This repository provides a complete learning journey integrating:
-- **Python Fundamentals** (Projects 1-10): Core language features and scripting
-- **Mathematical Foundations** (Projects 11-17): NumPy, calculus, and autodiff
-- **Supervised Machine Learning** (Projects 18-29): From linear regression to CNNs
-- **Unsupervised Learning** (Projects 30-32): Clustering, PCA, and autoencoders
-- **Sequence Models** (Projects 33-36): RNNs, LSTMs, and attention mechanisms
-- **NLP & Embeddings** (Projects 37-39): Word2Vec and semantic representations
-- **Advanced PyTorch** (Projects 40-44): Custom layers, optimizers, and data pipelines
-- **GPU Acceleration** (Projects 45-51): CUDA, Triton, and performance optimization
-- **Transformers & LLMs** (Projects 52-57): Building GPT-style models from scratch
-- **Tokenization** (Projects 58-61): BPE, SentencePiece, and text processing
-- **Training Infrastructure** (Projects 62-68): Distributed training, quantization, distillation
-- **Model Deployment** (Projects 69-74): FastAPI, Docker, and production systems
-- **RLHF & Alignment** (Projects 75-78): Training ChatGPT-style models
-- **Scaling & System Design** (Projects 79-82): Large-scale architecture planning
-- **Advanced Applications** (Projects 83-85): RAG, LoRA, and chatbot capstone
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.10 or higher
-- (Optional) NVIDIA GPU with CUDA support or Apple Silicon (M1/M2/M3/M4) for GPU acceleration
-- 8GB+ RAM recommended (16GB+ for larger models)
-
-### Installation
-
-1. **Clone the repository:**
-```bash
-git clone https://github.com/DanDo385/python-edu.git
-cd python-edu
-```
-
-2. **Set up your environment:**
-```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements-dev.txt
-```
-
-3. **Verify your setup:**
-```bash
-# Check Python version
-python --version
-
-# Test PyTorch installation
-python -c "import torch; print(f'PyTorch {torch.__version__}')"
-
-# Detect GPU (NVIDIA)
-python detect_nvidia_gpu.py
-
-# Detect GPU (Apple Metal)
-python detect_apple_metal_gpu.py
-
-# Auto-detect best backend
-python detect_accelerated_backend.py
-```
-
-4. **Start with Project 01:**
-```bash
-cd Projects/01-dynamic-typing-basics
-pytest tests/
-```
-
-## 📚 Documentation
-
-- **[SETUP.md](SETUP.md)**: Detailed environment setup for all platforms
-- **[GPU_GUIDE.md](GPU_GUIDE.md)**: GPU acceleration guide (NVIDIA CUDA & Apple Metal)
-- **[DOCKER.md](DOCKER.md)**: Containerized environment setup
-- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)**: Complete index of all 85 projects
-
-## 🗂️ Repository Structure
-
-```
-python-edu/
-├── Projects/                      # All 85 projects
-│   ├── 01-dynamic-typing-basics/
-│   │   ├── README.md             # Project objectives and tasks
-│   │   ├── solution_in_words.md  # Conceptual explanation
-│   │   ├── solution/             # Python solutions (.py + .ipynb)
-│   │   └── tests/                # Pytest test suite
-│   ├── 02-control-flow-loops/
-│   ├── ...
-│   └── 85-chatgpt-chatbot-capstone/
-├── README.md                      # This file
-├── PROJECT_SUMMARY.md             # Index of all projects
-├── SETUP.md                       # Environment setup guide
-├── GPU_GUIDE.md                   # GPU configuration details
-├── DOCKER.md                      # Docker usage guide
-├── Dockerfile                     # Container definition
-├── docker-compose.yml             # Multi-service orchestration
-├── detect_nvidia_gpu.py           # NVIDIA GPU detection
-├── detect_apple_metal_gpu.py      # Apple Metal detection
-├── detect_accelerated_backend.py  # Auto backend selection
-├── requirements-dev.txt           # All dependencies
-└── pytest.ini                     # Test configuration
-```
-
-## 🎓 Learning Path
-
-### Part 1: Python Fundamentals (Projects 1-10)
-Master Python basics: variables, control flow, functions, data structures, OOP, modules, error handling, file I/O, and automation scripting.
-
-### Part 2: Math & Autodiff (Projects 11-17)
-Build mathematical foundations for machine learning with NumPy, manual differentiation, backpropagation, autodiff engines, and gradient verification.
-
-### Part 3: Supervised ML (Projects 18-29)
-Implement ML algorithms from scratch: linear/logistic regression, neural networks, CNNs, and transfer learning. Master training, regularization, and model evaluation.
-
-### Part 4: Unsupervised Learning (Projects 30-32)
-Explore clustering (K-Means), dimensionality reduction (PCA), and neural compression (autoencoders).
-
-### Part 5: Sequence Models (Projects 33-36)
-Master RNNs, LSTMs, and attention mechanisms for sequential data and text generation.
-
-### Part 6: Word Embeddings (Projects 37-39)
-Learn representation learning with Word2Vec, pretrained embeddings, and semantic vector spaces.
-
-### Part 7: Advanced PyTorch (Projects 40-44)
-Build custom autograd functions, layers, optimizers, datasets, and training loops.
-
-### Part 8: GPU Acceleration (Projects 45-51)
-Optimize performance with CUDA, vectorization, Numba JIT, Triton kernels, profiling, and distributed training.
-
-### Part 9: Transformers & LLMs (Projects 52-57)
-Build transformer architectures from scratch: attention mechanisms, transformer blocks, GPT-style models, and BERT-style masked LM.
-
-### Part 10: Tokenization (Projects 58-61)
-Master text preprocessing with byte-pair encoding (BPE), SentencePiece, and integration with transformer models.
-
-### Part 11: Training Infrastructure (Projects 62-68)
-Learn advanced techniques: gradient checkpointing, mixed precision, quantization, pruning, knowledge distillation, and gradient accumulation.
-
-### Part 12: Model Deployment (Projects 69-74)
-Deploy models with FastAPI, batch inference, streaming responses, TorchScript/ONNX optimization, Docker, and scalable architectures.
-
-### Part 13: RLHF & Alignment (Projects 75-78)
-Train ChatGPT-style models with supervised fine-tuning, reward modeling, PPO, and safety evaluation.
-
-### Part 14: Scaling & Design (Projects 79-82)
-Understand scaling laws, compute-optimal training, and design systems for GPT-3/ChatGPT scale deployments.
-
-### Part 15: Advanced Applications (Projects 83-85)
-Build retrieval-augmented generation (RAG), parameter-efficient fine-tuning (LoRA), and a complete ChatGPT-style chatbot capstone.
-
-## 🧪 Testing
-
-Each project includes comprehensive pytest tests:
-
-```bash
-# Run tests for a specific project
-cd Projects/01-dynamic-typing-basics
-pytest tests/ -v
-
-# Run all tests in the curriculum
-pytest Projects/ -v
-
-# Run with coverage
-pytest Projects/ --cov=. --cov-report=html
-```
-
-## 🐳 Docker Usage
-
-For a consistent, reproducible environment:
-
-```bash
-# Build and start container
-docker-compose up -d
-
-# Access Jupyter notebook
-# Navigate to http://localhost:8888
-
-# Run tests in container
-docker-compose exec python-edu pytest Projects/
-
-# Stop container
-docker-compose down
-```
-
-See [DOCKER.md](DOCKER.md) for detailed instructions.
-
-## 💻 Hardware Support
-
-This curriculum supports multiple hardware configurations:
-
-- **NVIDIA GPUs**: Full CUDA support with cuDNN acceleration
-- **Apple Silicon (M1/M2/M3/M4)**: Metal Performance Shaders (MPS) backend
-- **CPU-only**: All projects run on CPU (may be slower for larger models)
-
-GPU detection scripts automatically select the best available backend. See [GPU_GUIDE.md](GPU_GUIDE.md) for setup instructions.
-
-## 📖 Learning Paths
-
-### 🎓 Complete Beginner (9-15 months)
-Start at Project 01, work sequentially through all 85 projects.
-- **Time**: 8-12 hours/week × 36-60 weeks
-
-### 💼 Experienced Programmer (5-9 months)
-Skim Part 1 (Projects 1-10), deep dive Parts 2-15.
-- **Time**: 12-18 hours/week × 20-36 weeks
-
-### 🤖 ML Engineer (3-6 months)
-Skip to Project 11 (NumPy). If comfortable with PyTorch, start at Project 40.
-Focus heavily on Parts 9-15 (Transformers, LLMs, deployment).
-- **Time**: 15-25 hours/week × 12-24 weeks
-
-### 🚀 Focus Tracks
-
-**LLM Specialist**: Projects 1-3, 11-17, 40-85
-**ML Infrastructure**: Projects 11-29, 40-44, 45-51, 62-74
-**Python + Algorithms**: Projects 1-10, then explore data structures topics
-
-## 🎯 By Project 85, You Will Have
-
-✅ **Implemented from scratch**:
-- Python fundamentals and automation tools
-- Neural network training (backprop, autodiff, optimization)
-- Transformer architecture (attention, multi-head, positional encoding)
-- GPT-style decoder models
-- Text tokenizers (BPE, SentencePiece)
-- Training infrastructure (distributed, mixed-precision, quantization)
-
-✅ **Trained real models**:
-- MNIST digit classifier (NumPy and PyTorch)
-- CIFAR-10 CNN with transfer learning
-- RNN/LSTM text generators
-- Transformer language models
-- RLHF-aligned chat models
-
-✅ **Deployed systems**:
-- REST API for LLM inference (FastAPI)
-- Streaming token generation
-- RAG question-answering system
-- Dockerized production services
-- ChatGPT-style web chatbot
-
-✅ **Mastered concepts**:
-- Python internals and best practices
-- Linear algebra, calculus, and optimization for ML
-- GPU programming (CUDA, Triton, MPS)
-- Transformer architectures and attention
-- LLM training, fine-tuning, and alignment
-- Production ML systems and scalability
-- Scaling laws and system design
-
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/improvement`)
-3. Make your changes with tests
-4. Submit a pull request
-
-## 📖 Additional Resources
-
-- [PyTorch Documentation](https://pytorch.org/docs/)
-- [Hugging Face Transformers](https://huggingface.co/docs/transformers/)
-- [NumPy User Guide](https://numpy.org/doc/stable/user/)
-- [OpenAI Research](https://openai.com/research/)
-- [Attention Is All You Need (Vaswani et al., 2017)](https://arxiv.org/abs/1706.03762)
-- [Training language models to follow instructions with human feedback (Ouyang et al., 2022)](https://arxiv.org/abs/2203.02155)
-
-## 📄 License
-
-This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-This curriculum draws inspiration from:
-- The "Attention Is All You Need" paper (Vaswani et al., 2017)
-- OpenAI's GPT and ChatGPT research
-- Andrej Karpathy's educational content (micrograd, nanoGPT)
-- Stanford CS231n and CS224n courses
-- Fast.ai courses
-- PyTorch and Hugging Face communities
-
-## 📧 Contact
-
-For questions or feedback, please open an issue on GitHub.
+**A comprehensive learning platform featuring two complete curricula: Data Structures & Algorithms and AI/Machine Learning**
 
 ---
 
-**Start your journey from Python basics to building ChatGPT-style systems today!** 🚀
+## 🎓 Two Complete Learning Paths
 
-*"Understanding beats memorization. Building beats watching tutorials."*
+### 📊 [Data Structures & Algorithms (DSA)](dsa/)
+**50 Projects | 3-4 Months | Interview Preparation**
 
-Last updated: 2025-11-16
+Master computer science fundamentals through hands-on implementation:
+- Arrays, Linked Lists, Trees, Graphs
+- Sorting & Searching Algorithms
+- Dynamic Programming & Backtracking
+- Interview-ready problem-solving
+
+[**Start DSA Curriculum →**](dsa/README.md)
+
+### 🤖 [AI & Machine Learning](ai/)
+**85 Projects | 9-15 Months | Build ChatGPT-Style Systems**
+
+Journey from Python basics to deploying production LLMs:
+- Neural Networks from Scratch
+- PyTorch & Deep Learning
+- Transformers & LLMs
+- RLHF, RAG, and Production Deployment
+
+[**Start AI Curriculum →**](ai/README.md)
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/DanDo385/python-edu.git
+cd python-edu
+
+# Choose your path:
+
+# Option 1: Data Structures & Algorithms
+cd dsa
+cat README.md  # Read the guide
+cd projects/01-python-basics-review
+
+# Option 2: AI & Machine Learning
+cd ai
+cat README.md  # Read the guide
+cd Projects/01-dynamic-typing-basics
+
+# Set up environment (see SETUP.md for details)
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements-dev.txt  # For AI curriculum
+```
+
+---
+
+## 📚 Curriculum Comparison
+
+| Feature | DSA Curriculum | AI Curriculum |
+|---------|----------------|---------------|
+| **Projects** | 50 | 85 |
+| **Duration** | 3-4 months | 9-15 months |
+| **Prerequisites** | Basic Python | Basic programming |
+| **Focus** | Algorithms & Interviews | ML & AI Systems |
+| **Dependencies** | Pure Python | NumPy, PyTorch, Transformers |
+| **Best For** | Job interviews, CS fundamentals | ML engineering, AI development |
+
+---
+
+## 🎯 Learning Paths
+
+### Path 1: Interview Preparation (2-3 months)
+**Focus**: DSA curriculum
+- Master all 50 DSA projects
+- Practice daily on LeetCode/HackerRank
+- Goal: Pass technical interviews at FAANG companies
+
+### Path 2: Full-Stack AI Engineer (12-18 months)
+**Combined**: Both curricula
+1. **Months 1-3**: DSA projects 1-30 (core algorithms)
+2. **Months 4-12**: AI projects 1-60 (ML fundamentals to transformers)
+3. **Months 13-18**: AI projects 61-85 (production LLM systems)
+- Goal: Build and deploy production AI systems
+
+### Path 3: ML Specialist (9-12 months)
+**Focus**: AI curriculum (skip DSA or minimal coverage)
+- Start AI from project 1 or 11 (depending on Python level)
+- Deep dive into neural networks, transformers, and LLMs
+- Goal: Research or ML engineering roles
+
+### Path 4: Rapid Interview Prep (6-8 weeks)
+**Focus**: Key DSA projects
+- Projects: 3-5, 9-10, 13-15, 18-20, 22-25, 27-30, 35-40, 41-47
+- 15-25 hours/week
+- Goal: Quick interview preparation
+
+---
+
+## 📖 Documentation
+
+### General Setup
+- **[SETUP.md](SETUP.md)** - Environment setup for all platforms
+- **[GPU_GUIDE.md](GPU_GUIDE.md)** - GPU setup (NVIDIA CUDA & Apple Metal)
+- **[DOCKER.md](DOCKER.md)** - Docker containerization guide
+
+### Curriculum-Specific
+- **[DSA README](dsa/README.md)** - DSA curriculum overview
+- **[DSA Projects](dsa/PROJECT_SUMMARY.md)** - All 50 DSA projects
+- **[AI README](ai/README.md)** - AI curriculum overview
+- **[AI Projects](ai/PROJECT_SUMMARY.md)** - All 85 AI projects
+
+---
+
+## 🛠️ Tech Stack
+
+### DSA Curriculum
+- **Python 3.10+** (pure Python, no dependencies)
+- Standard library only
+- Focus on algorithm implementation
+
+### AI Curriculum
+- **Python 3.10+**
+- **NumPy** - Numerical computing
+- **PyTorch** - Deep learning framework
+- **Transformers** - LLM library (Hugging Face)
+- **FastAPI** - Model serving
+- **Docker** - Containerization
+
+See [requirements-dev.txt](requirements-dev.txt) for complete dependency list.
+
+---
+
+## 🧪 Testing
+
+Both curricula include comprehensive test suites:
+
+```bash
+# DSA tests (no setup required)
+cd dsa
+pytest projects/ -v
+
+# AI tests (requires dependencies)
+cd ai
+pip install -r ../requirements-dev.txt
+pytest Projects/ -v
+
+# Run specific project
+pytest Projects/01-dynamic-typing-basics/tests/ -v
+```
+
+---
+
+## 🐳 Docker Support
+
+Run everything in a consistent, reproducible environment:
+
+```bash
+# Build and start
+docker-compose up -d
+
+# Access Jupyter (for AI projects)
+# Navigate to http://localhost:8888
+
+# Run tests
+docker-compose exec python-edu pytest dsa/projects/ -v
+docker-compose exec python-edu pytest ai/Projects/ -v
+
+# Stop
+docker-compose down
+```
+
+See [DOCKER.md](DOCKER.md) for details.
+
+---
+
+## 💻 Hardware Support
+
+**DSA Curriculum:**
+- Runs on any system (pure Python)
+- No GPU needed
+
+**AI Curriculum:**
+- **CPU**: All projects work (slower for large models)
+- **NVIDIA GPU**: Full CUDA support (recommended for projects 45+)
+- **Apple Silicon**: Metal Performance Shaders (MPS) support
+
+GPU detection scripts:
+```bash
+python detect_nvidia_gpu.py
+python detect_apple_metal_gpu.py
+python detect_accelerated_backend.py
+```
+
+---
+
+## 🎯 What You'll Build
+
+### DSA Curriculum
+✅ 10+ sorting/searching algorithms  
+✅ All major data structures  
+✅ 40+ algorithm patterns  
+✅ 200+ solved problems  
+✅ Interview-ready skills  
+
+### AI Curriculum
+✅ Neural networks from scratch  
+✅ Transformer architecture  
+✅ GPT-style language models  
+✅ Production ML systems  
+✅ RAG & ChatGPT-style chatbot  
+
+---
+
+## 🤝 Contributing
+
+Contributions welcome! Please:
+1. Fork the repository
+2. Create a feature branch
+3. Add your improvements
+4. Submit a pull request
+
+---
+
+## 📄 License
+
+MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## 🙏 Acknowledgments
+
+**DSA Curriculum inspired by:**
+- *Introduction to Algorithms* (CLRS)
+- *Cracking the Coding Interview*
+- LeetCode & HackerRank
+
+**AI Curriculum inspired by:**
+- *Attention Is All You Need* (Vaswani et al.)
+- Andrej Karpathy's educational content
+- Stanford CS231n & CS224n
+- Fast.ai courses
+
+---
+
+## 📧 Contact
+
+Questions or feedback? Open an issue on GitHub.
+
+---
+
+**Choose your path and start learning today!** 🚀
+
+| I want to... | Start here |
+|-------------|------------|
+| Prepare for coding interviews | [DSA Curriculum](dsa/) |
+| Learn ML and AI | [AI Curriculum](ai/) |
+| Become a full-stack AI engineer | Both (DSA first) |
+| Build ChatGPT-like systems | [AI Curriculum](ai/) |
+
+*Last updated: 2025-11-16*
