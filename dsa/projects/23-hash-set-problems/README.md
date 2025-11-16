@@ -1,22 +1,23 @@
 # Project 23: Hash Set Problems
 
-## Overview
+[![Difficulty](https://img.shields.io/badge/Difficulty-Easy/Medium-yellow.svg)](../../README.md)
 
-Learn hash set problems through hands-on implementation.
+## 🎯 Overview
 
-## Learning Objectives
+Master hash set operations for O(1) membership testing, duplicate detection, and set operations.
 
-- Understand the theory behind hash set problems
-- Implement solutions from scratch
-- Analyze time and space complexity
-- Solve real-world problems
+## 💻 Problems
 
-## Problems
+### 1. Contains Duplicate
+Check if array has duplicates. **Time**: O(n), **Space**: O(n)
 
-Complete the problems in `solution/solution.py`.
+### 2. Intersection of Arrays
+Find common elements. **Time**: O(n+m), **Space**: O(n)
 
-## Testing
+### 3. Happy Number
+Detect cycles in digit square sums. **Time**: O(log n), **Space**: O(log n)
 
-```bash
-pytest tests/ -v
-```
+### 4. Isomorphic Strings
+Check if character mapping exists. **Time**: O(n), **Space**: O(1)
+
+**Estimated Time**: 2-3 hours | **Difficulty**: ⭐⭐ Easy-Medium

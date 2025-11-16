@@ -1,22 +1,23 @@
 # Project 24: Frequency Counting Patterns
 
-## Overview
+[![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange.svg)](../../README.md)
 
-Learn frequency counting patterns through hands-on implementation.
+## 🎯 Overview
 
-## Learning Objectives
+Use hash maps to count frequencies and solve top-k, sorting, and uniqueness problems.
 
-- Understand the theory behind frequency counting patterns
-- Implement solutions from scratch
-- Analyze time and space complexity
-- Solve real-world problems
+## 💻 Problems
 
-## Problems
+### 1. Top K Frequent Elements
+Find k most common elements using Counter. **Time**: O(n log k)
 
-Complete the problems in `solution/solution.py`.
+### 2. Sort Characters by Frequency
+Sort string by character frequency. **Time**: O(n log n)
 
-## Testing
+### 3. Find All Duplicates
+Find duplicates using array as hash map. **Time**: O(n), **Space**: O(1)
 
-```bash
-pytest tests/ -v
-```
+### 4. First Unique Character
+Find first non-repeating character. **Time**: O(n), **Space**: O(1)
+
+**Estimated Time**: 3-4 hours | **Difficulty**: ⭐⭐⭐ Medium

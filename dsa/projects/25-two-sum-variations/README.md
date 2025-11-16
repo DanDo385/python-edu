@@ -1,22 +1,26 @@
 # Project 25: Two Sum Variations
 
-## Overview
+[![Difficulty](https://img.shields.io/badge/Difficulty-Medium/Hard-red.svg)](../../README.md)
 
-Learn two sum variations through hands-on implementation.
+## 🎯 Overview
 
-## Learning Objectives
+Master the two-sum pattern and extend to three-sum, four-sum, and closest-sum problems.
 
-- Understand the theory behind two sum variations
-- Implement solutions from scratch
-- Analyze time and space complexity
-- Solve real-world problems
+## 💻 Problems
 
-## Problems
+### 1. Two Sum
+Hash map approach. **Time**: O(n), **Space**: O(n)
 
-Complete the problems in `solution/solution.py`.
+### 2. Three Sum
+Find all unique triplets summing to zero. **Time**: O(n²)
 
-## Testing
+### 3. Four Sum
+Find all unique quadruplets. **Time**: O(n³)
 
-```bash
-pytest tests/ -v
-```
+### 4. Two Sum II (Sorted Array)
+Two pointers on sorted input. **Time**: O(n), **Space**: O(1)
+
+### 5. Three Sum Closest
+Find sum closest to target. **Time**: O(n²)
+
+**Estimated Time**: 4-5 hours | **Difficulty**: ⭐⭐⭐⭐ Medium-Hard

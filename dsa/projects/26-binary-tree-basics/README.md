@@ -1,22 +1,28 @@
 # Project 26: Binary Tree Basics
 
-## Overview
+[![Difficulty](https://img.shields.io/badge/Difficulty-Easy/Medium-yellow.svg)](../../README.md)
 
-Learn binary tree basics through hands-on implementation.
+## 🎯 Overview
 
-## Learning Objectives
+Implement fundamental binary tree operations: construction, properties, and comparison.
 
-- Understand the theory behind binary tree basics
-- Implement solutions from scratch
-- Analyze time and space complexity
-- Solve real-world problems
+## 💻 Problems
 
-## Problems
+### 1. TreeNode Class
+Basic node structure with val, left, right
 
-Complete the problems in `solution/solution.py`.
+### 2. Create Tree from List
+Build tree from level-order array. **Time**: O(n)
 
-## Testing
+### 3. Tree Properties
+- Height (longest path to leaf): O(n)
+- Size (total nodes): O(n)
+- Count leaves: O(n)
 
-```bash
-pytest tests/ -v
-```
+### 4. Tree Equality
+Check if two trees are identical. **Time**: O(n)
+
+### 5. Is Same Tree
+Structural and value equality check. **Time**: O(n)
+
+**Estimated Time**: 3-4 hours | **Difficulty**: ⭐⭐ Easy-Medium
