@@ -215,8 +215,9 @@ TODO: Sample test output
 
 ## References
 
-- [DSA Primer](../../DSA_PRIMER.md)
-- [Python Basics](../../PYTHON_BASICS.md)
+- [Repository README](../../README.md)
+- [Track 1 Intro](../../1_data_structures_algorithms/01-recursion/explanation.md)
+- [Track 2 Intro](../../2_python_as_systems_tool/01-basic-python-syntax/explanation.md)
 - TODO: Specific resources
 
 ---
