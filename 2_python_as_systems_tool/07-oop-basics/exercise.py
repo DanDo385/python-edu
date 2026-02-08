@@ -1,80 +1,113 @@
 """
-Project 07: OOP Basics
+Project: Object-Oriented Programming (OOP) Basics
 
-Implement Task and TodoList with core object-oriented behavior.
-Run: pytest test_solution.py -v
+This project introduces the basics of OOP in Python. You will create a class
+to model a real-world concept, encapsulating its data (attributes) and
+behaviors (methods).
 """
 
+class BankAccount:
+    """
+    A class to represent a simple bank account.
+    """
 
-class Task:
-    """Simple task object with mutable completion state."""
-
-    def __init__(self, title: str):
+    def __init__(self, owner_name, initial_balance=0.0):
         """
-        Create a new task.
+        The constructor for the BankAccount class.
+        This method is called automatically when a new object is created.
 
         Args:
-            title: Non-empty title string.
-
-        Raises:
-            TypeError: If title is not a string.
-            ValueError: If title is blank after stripping.
+            owner_name (str): The name of the account owner.
+            initial_balance (float): The starting balance of the account.
+        
+        Attributes:
+            owner_name (str): Stores the owner's name.
+            balance (float): Stores the current account balance. Should not be
+                             directly accessed from outside the class.
         """
-        # TODO: Validate and store title; initialize done=False.
+        # TODO: Initialize the `owner_name` and `balance` attributes.
+        # For the balance, it's a common convention to use a single
+        # leading underscore (e.g., self._balance) to indicate that it is
+        # intended for internal use.
         pass
 
-    def mark_done(self) -> None:
-        """Mark this task as completed."""
-        # TODO: Set done state to True.
-        pass
-
-
-class TodoList:
-    """Collection object that owns multiple Task instances."""
-
-    def __init__(self):
-        """Initialize an empty todo list."""
-        # TODO: Create storage for Task objects.
-        pass
-
-    def __len__(self) -> int:
-        """Return number of tasks currently stored."""
-        # TODO: Return task count.
-        pass
-
-    def add_task(self, title: str) -> Task:
-        """Create a new task, store it, and return it."""
-        # TODO: Create Task, append to internal list, return task.
-        pass
-
-    def complete_task(self, title: str) -> bool:
+    def deposit(self, amount):
         """
-        Mark first matching unfinished task as done.
+        Adds a specified amount to the account balance.
+
+        Args:
+            amount (float): The amount to deposit. Must be a positive number.
 
         Returns:
-            True if a task was completed, else False.
+            bool: True if the deposit was successful, False otherwise.
         """
-        # TODO: Find first unfinished match, mark done, return True/False.
+        # TODO: Implement the deposit logic.
+        # 1. Validate that the amount is positive. If not, do nothing and
+        #    return False.
+        # 2. If the amount is valid, add it to the balance and return True.
         pass
 
-    def pending_titles(self) -> list[str]:
-        """Return titles for tasks that are not done."""
-        # TODO: Build and return pending titles.
+    def withdraw(self, amount):
+        """
+        Subtracts a specified amount from the account balance.
+
+        Args:
+            amount (float): The amount to withdraw. Must be a positive number.
+
+        Returns:
+            bool: True if the withdrawal was successful, False otherwise.
+        """
+        # TODO: Implement the withdrawal logic.
+        # 1. Validate that the amount is positive.
+        # 2. Validate that the account has sufficient funds.
+        # 3. If the withdrawal is valid, subtract the amount from the balance.
+        # 4. Return True for a successful withdrawal, False otherwise.
         pass
 
-    def completion_ratio(self) -> float:
+    def get_balance(self):
         """
-        Return fraction of tasks completed in [0.0, 1.0].
+        A "getter" method to safely retrieve the account balance.
+        """
+        # TODO: Return the current balance.
+        pass
 
-        Convention:
-            If list is empty, return 0.0.
+    def __str__(self):
         """
-        # TODO: Compute done_count / total_count.
+        The "string representation" method.
+        This is called when you use `print()` or `str()` on an object.
+
+        Returns:
+            str: A user-friendly string describing the account.
+        
+        Example:
+            "Account Owner: John Doe, Balance: $100.00"
+        """
+        # TODO: Implement the string representation.
+        # Use an f-string to format the owner's name and balance.
+        # The balance should be formatted to two decimal places.
         pass
 
 
-if __name__ == "__main__":
-    todo = TodoList()
-    todo.add_task("Read chapter 1")
-    todo.add_task("Write notes")
-    print(todo.pending_titles())
+# Example Usage (you can uncomment this to test your implementation)
+# if __name__ == "__main__":
+#     # Create a new account
+#     my_account = BankAccount("John Doe", 100.0)
+#     print(my_account)  # Expected: Account Owner: John Doe, Balance: $100.00
+
+#     # Test deposit
+#     print("\nDepositing $50.55...")
+#     my_account.deposit(50.55)
+#     print(my_account)  # Expected: Balance: $150.55
+
+#     print("\nAttempting to deposit a negative amount...")
+#     my_account.deposit(-20)
+#     print(my_account)  # Expected: Balance should remain $150.55
+
+#     # Test withdrawal
+#     print("\nWithdrawing $80...")
+#     my_account.withdraw(80)
+#     print(my_account)  # Expected: Balance: $70.55
+
+#     print("\nAttempting to withdraw more than the balance...")
+#     my_account.withdraw(100)
+#     print(my_account)  # Expected: Balance should remain $70.55

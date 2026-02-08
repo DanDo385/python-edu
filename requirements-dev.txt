@@ -1,21 +1,35 @@
-# Python-50x-Minis Development Dependencies
-# Python 3.12.12
+# Python Education Curriculum - Development Dependencies
+#
+# This file is intended for contributors and curriculum authors.
+# It includes all student dependencies plus tools for testing, linting,
+# formatting, and documentation generation.
+#
+# =============================================================================
+# TRACK 1 (DSA) & Early TRACK 2 (Python Systems): Pure Python
+# =============================================================================
+# Standard library only. No external dependencies required for initial projects.
 
 # =============================================================================
-# PHASE I (Projects 01-15): Pure Python - NO EXTERNAL DEPENDENCIES
+# Late TRACK 2 (Python Systems): Web, APIs, and Data
 # =============================================================================
-# Standard library only
+requests>=2.31.0,<3.0.0
+beautifulsoup4>=4.12.0,<4.13.0
+lxml>=4.9.0,<5.0.0
+pandas>=2.0.0,<2.1.0
+flask>=2.3.0,<2.4.0
+flask-cors>=4.0.0,<4.1.0
+python-dotenv>=1.0.0,<2.0.0
+schedule>=1.2.0,<1.3.0
+click>=8.1.0,<8.2.0
 
 # =============================================================================
-# PHASE II (Projects 16-30): NumPy + ML Math
+# TRACK 3 (AI from First Principles): ML/AI Ecosystem
 # =============================================================================
+# Foundational Libraries
 numpy>=1.24.0,<2.0.0
 matplotlib>=3.7.0,<4.0.0
 scipy>=1.10.0,<2.0.0
 
-# =============================================================================
-# PHASE III (Projects 31-40): PyTorch Ecosystem
-# =============================================================================
 # PyTorch (CPU version for CI compatibility)
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch>=2.0.0,<3.0.0
@@ -25,9 +39,7 @@ torchtext>=0.15.0,<1.0.0
 # Progress bars and utilities
 tqdm>=4.65.0,<5.0.0
 
-# =============================================================================
-# PHASE IV (Projects 41-50): Transformers & LLMs
-# =============================================================================
+# Transformer & LLM Ecosystem
 # Tensor operations
 einops>=0.6.1,<1.0.0
 

@@ -1,105 +1,113 @@
 """
-Project 10: Sorting Algorithms - SOLUTION
+Project: More Sorting Algorithms - SOLUTION
 
-Full implementation with detailed inline comments.
-
-This solution demonstrates:
-- TODO: Key techniques
-- TODO: Optimization strategies
-- TODO: Best practices
-
-Author: Python-50x-Minis
-Date: 2025-11-16
+This file provides complete implementations of Selection Sort and Quick Sort,
+with detailed comments explaining their logic, complexity, and trade-offs.
 """
+from typing import List
 
-from typing import List, Optional, Any
-
-
-# =============================================================================
-# SOLUTION IMPLEMENTATION
-# =============================================================================
-
-def main_function(arg1: Any, arg2: Optional[Any] = None) -> Any:
+def selection_sort(arr: List[int]) -> None:
     """
-    TODO: Complete function description with mathematical notation if needed.
+    Sorts a list of integers in-place using the Selection Sort algorithm.
 
-    Algorithm:
-    ----------
-    1. TODO: Step 1
-    2. TODO: Step 2
-    3. TODO: Step 3
+    Time Complexity: O(n^2) because of the nested loops.
+    Space Complexity: O(1) as it sorts in-place.
+    
+    It is noted for its simplicity and has performance advantages over more
+    complicated algorithms in certain situations, particularly where auxiliary
+    memory is limited. It makes the minimum possible number of swaps, n - 1.
 
     Args:
-        arg1: TODO detailed description with types and constraints
-        arg2: TODO optional parameter explanation
+        arr (List[int]): The list to sort (will be modified in-place).
+    """
+    n = len(arr)
+
+    # The outer loop moves the boundary of the unsorted subarray.
+    for i in range(n):
+        # Assume the first element of the unsorted part is the minimum.
+        min_idx = i
+
+        # The inner loop finds the actual minimum element in the unsorted part.
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_idx]:
+                min_idx = j
+
+        # Swap the found minimum element with the first element of the
+        # unsorted part. This moves the minimum element to its correct
+        # sorted position.
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+
+
+def partition(arr: List[int], low: int, high: int) -> int:
+    """
+    Helper function for Quick Sort. It partitions the array using the
+    Lomuto partition scheme.
+
+    Args:
+        arr (List[int]): The list to partition.
+        low (int): The starting index.
+        high (int): The ending index.
 
     Returns:
-        TODO: Precise description of return value
+        int: The index where the pivot element is now placed.
+    """
+    # We choose the last element as the pivot.
+    pivot = arr[high]
+    
+    # `i` will be the index of the last element that was smaller than the pivot.
+    # It starts at `low - 1`.
+    i = low - 1
 
-    Raises:
-        ValueError: TODO specific error conditions
-        TypeError: TODO type-related errors
+    # Iterate from `low` to `high - 1`.
+    for j in range(low, high):
+        # If the current element is smaller than or equal to the pivot...
+        if arr[j] <= pivot:
+            # ...increment `i` and swap `arr[i]` with `arr[j]`.
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
 
-    Examples:
-        >>> main_function([1, 2, 3])
-        6
+    # After the loop, the pivot belongs at index `i + 1`.
+    # Swap the pivot (arr[high]) into its correct place.
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    
+    # Return the pivot's new index.
+    return i + 1
 
-        >>> main_function([], default=0)
-        0
+def quick_sort(arr: List[int], low: int, high: int) -> None:
+    """
+    Sorts a list of integers in-place using the Quick Sort algorithm.
 
     Time Complexity:
-        TODO: O(?) - detailed breakdown
+        - Best & Average Case: O(n log n)
+        - Worst Case: O(n^2) (occurs with sorted data and a bad pivot choice)
+    Space Complexity: O(log n) for the recursion stack depth.
 
-    Space Complexity:
-        TODO: O(?) - memory usage analysis
-
-    Notes:
-        TODO: Implementation notes, numerical stability, edge cases
+    Args:
+        arr (List[int]): The list to sort.
+        low (int): The starting index.
+        high (int): The ending index.
     """
-    # TODO: Full implementation with line-by-line comments
+    if low < high:
+        # `pi` is the partitioning index; arr[pi] is now at the right place.
+        pi = partition(arr, low, high)
 
-    # Input validation
-    if not arg1:
-        raise ValueError("arg1 cannot be empty")
+        # Recursively sort the elements before partition
+        quick_sort(arr, low, pi - 1)
+        # Recursively sort the elements after partition
+        quick_sort(arr, pi + 1, high)
 
-    # Main algorithm
-    result = None  # TODO: implement
+def quick_sort_wrapper(arr: List[int]) -> None:
+    """A user-friendly wrapper for calling quick_sort."""
+    quick_sort(arr, 0, len(arr) - 1)
 
-    return result
-
-
-# =============================================================================
-# ALTERNATIVE IMPLEMENTATIONS
-# =============================================================================
-
-def alternative_approach(arg: Any) -> Any:
-    """
-    Alternative solution demonstrating different trade-offs.
-
-    This version prioritizes:
-    - TODO: What this optimizes for (readability, speed, memory)
-
-    Trade-offs:
-    - TODO: What we gain
-    - TODO: What we sacrifice
-    """
-    # TODO: Alternative implementation
-    pass
-
-
-# =============================================================================
-# USAGE EXAMPLES
-# =============================================================================
-
+# --- Example Usage ---
 if __name__ == "__main__":
-    # Example 1: Basic usage
-    print("Example 1:")
-    # TODO: demonstrate usage
+    list1 = [64, 25, 12, 22, 11]
+    print(f"Original list for Selection Sort: {list1}")
+    selection_sort(list1)
+    print(f"Sorted list: {list1}")
 
-    # Example 2: Edge case
-    print("Example 2:")
-    # TODO: demonstrate edge case
-
-    # Example 3: Complex scenario
-    print("Example 3:")
-    # TODO: demonstrate complex usage
+    list2 = [10, 7, 8, 9, 1, 5]
+    print(f"\nOriginal list for Quick Sort: {list2}")
+    quick_sort_wrapper(list2)
+    print(f"Sorted list: {list2}")

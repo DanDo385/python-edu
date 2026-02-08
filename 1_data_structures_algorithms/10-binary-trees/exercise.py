@@ -1,76 +1,95 @@
 """
-Project 13: Binary Trees
+Project: Binary Search Trees
 
-Exercise file with TODOs and partial implementation.
-
-Learning objectives:
-- TODO: List objectives
-
-Author: Python-50x-Minis
+This project involves implementing a Binary Search Tree (BST). A BST is a
+node-based binary tree data structure which has the following properties:
+- The left subtree of a node contains only nodes with keys lesser than the node’s key.
+- The right subtree of a node contains only nodes with keys greater than the node’s key.
+- The left and right subtree each must also be a binary search tree.
 """
+from typing import List, Optional
 
-from typing import List, Optional, Any
+class Node:
+    """A node in a Binary Search Tree."""
+    def __init__(self, value: int):
+        """Initializes a Node."""
+        # TODO: Initialize `self.value`, `self.left`, and `self.right`
+        pass
 
+class BinarySearchTree:
+    """A Binary Search Tree implementation."""
+    def __init__(self):
+        """Initializes an empty BST."""
+        # TODO: Initialize the `root` of the tree to None.
+        pass
 
-# =============================================================================
-# THINK BEFORE CODING
-# =============================================================================
-# 1. What is the problem asking?
-# 2. What are the inputs and outputs?
-# 3. What are the edge cases?
-# 4. What is the brute force approach?
-# 5. How can we optimize?
+    def insert(self, value: int):
+        """
+        Inserts a new value into the BST, maintaining the BST property.
+        This method will call a private helper method to perform the
+        recursive insertion.
+        """
+        # TODO: If the tree is empty, create a new root node.
+        # Otherwise, call the `_insert_recursive` helper method.
+        pass
 
+    def _insert_recursive(self, current_node: Node, value: int) -> Node:
+        """A private helper method to recursively find the correct spot and insert the new node."""
+        # TODO: Base case: if the current node is None, we've found the spot.
+        # Return a new Node with the given value.
 
-# =============================================================================
-# EXERCISE FUNCTIONS
-# =============================================================================
+        # TODO: Recursive step:
+        # If the value is less than the current node's value, recurse on the left child.
+        # If the value is greater than the current node's value, recurse on the right child.
+        # (If the value is equal, we can just return the current node, as duplicates are not handled here).
+        
+        # TODO: Return the current node (with its subtree potentially updated).
+        pass
 
-def main_function(arg1: Any, arg2: Optional[Any] = None) -> Any:
-    """
-    TODO: Main function description.
+    def find(self, value: int) -> bool:
+        """
+        Searches for a value in the BST.
+        This will call a private recursive helper method.
+        """
+        # TODO: Call the `_find_recursive` helper method, starting from the root.
+        pass
 
-    Args:
-        arg1: TODO description
-        arg2: TODO description
+    def _find_recursive(self, current_node: Optional[Node], value: int) -> bool:
+        """A private helper method to recursively search for a value."""
+        # TODO: Base case 1: If the current node is None, the value is not in the tree.
+        # TODO: Base case 2: If the current node's value matches the target value, we found it.
 
-    Returns:
-        TODO: Return value description
+        # TODO: Recursive step:
+        # If the target value is less than the current node's value, search the left subtree.
+        # Otherwise, search the right subtree.
+        pass
+    
+    def in_order_traversal(self) -> List[int]:
+        """
+        Performs an in-order traversal (Left, Root, Right) of the tree.
+        For a BST, this will return the values in sorted order.
+        """
+        result = []
+        # TODO: Call the `_in_order_recursive` helper method.
+        return result
 
-    Raises:
-        ValueError: TODO: When does this raise?
+    def _in_order_recursive(self, node: Optional[Node], result: List[int]):
+        # TODO: Implement the in-order traversal logic:
+        # 1. Recurse on the left child.
+        # 2. Visit the root (append its value to the result list).
+        # 3. Recurse on the right child.
+        pass
 
-    Examples:
-        >>> main_function(example_input)
-        expected_output
+    # --- Optional: Challenge ---
+    
+    def pre_order_traversal(self) -> List[int]:
+        """Performs a pre-order traversal (Root, Left, Right)."""
+        result = []
+        # TODO (Optional): Implement a pre-order traversal helper.
+        return result
 
-    Time Complexity: TODO: O(?)
-    Space Complexity: TODO: O(?)
-    """
-    # TODO: Implement this function
-    pass
-
-
-# =============================================================================
-# HELPER FUNCTIONS (if needed)
-# =============================================================================
-
-def helper_function(arg: Any) -> Any:
-    """
-    TODO: Helper function description.
-    """
-    # TODO: Implement
-    pass
-
-
-# =============================================================================
-# MAIN (for testing)
-# =============================================================================
-
-if __name__ == "__main__":
-    # TODO: Add example usage
-    print(f"Project 13: Binary Trees")
-
-    # Example test case
-    # result = main_function(test_input)
-    # print(f"Result: {result}")
+    def post_order_traversal(self) -> List[int]:
+        """Performs a post-order traversal (Left, Right, Root)."""
+        result = []
+        # TODO (Optional): Implement a post-order traversal helper.
+        return result

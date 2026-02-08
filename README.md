@@ -22,6 +22,23 @@ This repository is a teaching-first curriculum. You are expected to read, implem
 - Able to run Python and `pytest` from terminal.
 - Recommended: Python 3.11+ and a virtual environment.
 
+## Dependencies & Phased Learning
+
+This curriculum is designed in phases to introduce dependencies gradually.
+
+*   **Phase 1: Pure Python**
+    *   **Tracks:** `1_data_structures_algorithms` and the beginning of `2_python_as_systems_tool`.
+    *   **Dependencies:** None. These projects use only the Python standard library, allowing you to focus on core computer science and language fundamentals without external tools.
+
+*   **Phase 2: External Libraries**
+    *   **Tracks:** Later projects in `2_python_as_systems_tool` and all of `3_ai_from_first_principles`.
+    *   **Dependencies:** These tracks introduce powerful libraries for data analysis, web development, and machine learning (e.g., `pandas`, `flask`, `numpy`, `torch`).
+
+To install all required packages for all tracks, run:
+```bash
+pip install -r requirements.txt
+```
+
 ## Suggested Order
 
 1. Start with `2_python_as_systems_tool/01-basic-python-syntax`.

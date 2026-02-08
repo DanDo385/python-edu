@@ -1,76 +1,86 @@
 """
-Project 08: Recursion Divide Conquer
+Project: Recursion and Divide & Conquer - Merge Sort
 
-Exercise file with TODOs and partial implementation.
-
-Learning objectives:
-- TODO: List objectives
-
-Author: Python-50x-Minis
+This project focuses on implementing the Merge Sort algorithm, a classic
+example of the "Divide and Conquer" paradigm.
 """
+from typing import List
 
-from typing import List, Optional, Any
-
-
-# =============================================================================
-# THINK BEFORE CODING
-# =============================================================================
-# 1. What is the problem asking?
-# 2. What are the inputs and outputs?
-# 3. What are the edge cases?
-# 4. What is the brute force approach?
-# 5. How can we optimize?
-
-
-# =============================================================================
-# EXERCISE FUNCTIONS
-# =============================================================================
-
-def main_function(arg1: Any, arg2: Optional[Any] = None) -> Any:
+def merge_sort(arr: List[int]) -> List[int]:
     """
-    TODO: Main function description.
+    Sorts a list of integers in ascending order using the Merge Sort algorithm.
+
+    Merge Sort works as follows:
+    1.  **Divide:** If the list has more than one element, split it into two
+        halves.
+    2.  **Conquer:** Recursively call `merge_sort` on each half.
+    3.  **Combine:** Merge the two sorted halves back into a single sorted list.
 
     Args:
-        arg1: TODO description
-        arg2: TODO description
+        arr (List[int]): The list of integers to sort.
 
     Returns:
-        TODO: Return value description
-
-    Raises:
-        ValueError: TODO: When does this raise?
-
-    Examples:
-        >>> main_function(example_input)
-        expected_output
-
-    Time Complexity: TODO: O(?)
-    Space Complexity: TODO: O(?)
+        List[int]: A new list containing the sorted integers.
     """
-    # TODO: Implement this function
+    # TODO: Base Case
+    # If the list has 0 or 1 elements, it is already sorted.
+    # Return the list as is.
+    pass
+
+    # TODO: Divide
+    # Find the middle point of the list.
+    # Split the list into two halves: `left_half` and `right_half`.
+    pass
+
+    # TODO: Conquer
+    # Recursively sort the left and right halves.
+    pass
+
+    # TODO: Combine
+    # Merge the sorted halves using the `merge` helper function.
     pass
 
 
-# =============================================================================
-# HELPER FUNCTIONS (if needed)
-# =============================================================================
+def merge(left_half: List[int], right_half: List[int]) -> List[int]:
+    """
+    Merges two sorted lists into a single sorted list.
 
-def helper_function(arg: Any) -> Any:
+    Args:
+        left_half (List[int]): A sorted list of integers.
+        right_half (List[int]): A sorted list of integers.
+
+    Returns:
+        List[int]: A new list containing all elements from both input lists,
+                   in sorted order.
     """
-    TODO: Helper function description.
-    """
-    # TODO: Implement
+    # This is a helper function for `merge_sort`.
+    
+    # TODO: Initialize an empty list to store the merged result.
     pass
 
+    # TODO: Initialize two pointers, one for each list.
+    pass
 
-# =============================================================================
-# MAIN (for testing)
-# =============================================================================
+    # TODO: Loop while both pointers are within the bounds of their lists.
+    # Compare the elements at the current pointers.
+    # Append the smaller element to the result list and advance its pointer.
+    pass
 
-if __name__ == "__main__":
-    # TODO: Add example usage
-    print(f"Project 08: Recursion Divide Conquer")
+    # TODO: Append any remaining elements.
+    # After the main loop, one of the lists may still have elements left.
+    # Append the rest of the left_half, if any.
+    # Append the rest of the right_half, if any.
+    pass
 
-    # Example test case
-    # result = main_function(test_input)
-    # print(f"Result: {result}")
+    # TODO: Return the merged list.
+    pass
+
+# Example Usage (you can uncomment to test your implementation)
+# if __name__ == "__main__":
+#     unsorted_list = [38, 27, 43, 3, 9, 82, 10]
+#     print(f"Unsorted list: {unsorted_list}")
+#
+#     sorted_list = merge_sort(unsorted_list)
+#     print(f"Sorted list:   {sorted_list}")
+#
+#     # Expected output: [3, 9, 10, 27, 38, 43, 82]

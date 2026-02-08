@@ -290,6 +290,17 @@ def normalize_array(arr):
     # np.std() computes: sqrt(mean((arr - mean)**2))
     std = np.std(arr)
     
+    # --- Defensive Programming Check ---
+    # If the standard deviation is 0, it means all elements in the array
+    # are the same. Dividing by zero is mathematically undefined and would
+    # produce `NaN` (Not a Number) in NumPy, causing silent errors downstream.
+    # To prevent this, we handle this edge case explicitly.
+    if std == 0:
+        # If all elements are the same, they are all equal to the mean.
+        # Therefore, (arr - mean) will be an array of zeros.
+        # The normalized form is conceptually an array of zeros.
+        return np.zeros(arr.shape)
+        
     # Normalize: subtract mean (centers data at 0), divide by std (scales to unit variance)
     # This is the z-score formula from statistics
     # After normalization:

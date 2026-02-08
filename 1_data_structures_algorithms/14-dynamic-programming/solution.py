@@ -1,105 +1,106 @@
 """
-Project 15: Dynamic Programming - SOLUTION
+Project: Introduction to Dynamic Programming - SOLUTION
 
-Full implementation with detailed inline comments.
-
-This solution demonstrates:
-- TODO: Key techniques
-- TODO: Optimization strategies
-- TODO: Best practices
-
-Author: Python-50x-Minis
-Date: 2025-11-16
+This file provides solutions for classic DP problems using both
+Memoization (Top-Down) and Tabulation (Bottom-Up) approaches.
 """
+from typing import Dict
 
-from typing import List, Optional, Any
+# --- Problem 1: Memoization (Top-Down DP) ---
 
-
-# =============================================================================
-# SOLUTION IMPLEMENTATION
-# =============================================================================
-
-def main_function(arg1: Any, arg2: Optional[Any] = None) -> Any:
+def fib_memoized(n: int, memo: Dict[int, int] = None) -> int:
     """
-    TODO: Complete function description with mathematical notation if needed.
-
-    Algorithm:
-    ----------
-    1. TODO: Step 1
-    2. TODO: Step 2
-    3. TODO: Step 3
-
-    Args:
-        arg1: TODO detailed description with types and constraints
-        arg2: TODO optional parameter explanation
-
-    Returns:
-        TODO: Precise description of return value
-
-    Raises:
-        ValueError: TODO specific error conditions
-        TypeError: TODO type-related errors
-
-    Examples:
-        >>> main_function([1, 2, 3])
-        6
-
-        >>> main_function([], default=0)
-        0
-
-    Time Complexity:
-        TODO: O(?) - detailed breakdown
-
-    Space Complexity:
-        TODO: O(?) - memory usage analysis
-
-    Notes:
-        TODO: Implementation notes, numerical stability, edge cases
+    Calculates the n-th Fibonacci number using memoization.
+    This is a "Top-Down" DP approach. We start from the top (the `n` we
+    want) and break it down, caching results along the way.
     """
-    # TODO: Full implementation with line-by-line comments
+    # Initialize the memoization dictionary on the first call.
+    if memo is None:
+        memo = {}
 
-    # Input validation
-    if not arg1:
-        raise ValueError("arg1 cannot be empty")
+    # Base case 1: If the result is already in our cache, return it.
+    if n in memo:
+        return memo[n]
+    
+    # Base cases for the Fibonacci sequence itself.
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
 
-    # Main algorithm
-    result = None  # TODO: implement
+    # Recursive step: Calculate the Fibonacci number by calling the function
+    # for the two preceding numbers.
+    result = fib_memoized(n - 1, memo) + fib_memoized(n - 2, memo)
 
+    # Store the newly computed result in our cache before returning.
+    memo[n] = result
+    
     return result
 
+# --- Problem 2: Tabulation (Bottom-Up DP) ---
 
-# =============================================================================
-# ALTERNATIVE IMPLEMENTATIONS
-# =============================================================================
-
-def alternative_approach(arg: Any) -> Any:
+def climb_stairs(n: int) -> int:
     """
-    Alternative solution demonstrating different trade-offs.
-
-    This version prioritizes:
-    - TODO: What this optimizes for (readability, speed, memory)
-
-    Trade-offs:
-    - TODO: What we gain
-    - TODO: What we sacrifice
+    Calculates the number of distinct ways to climb `n` stairs, either 1 or 2
+    steps at a time. This is a "Bottom-Up" DP approach. We solve the smallest
+    subproblems first and build our way up to the final answer.
     """
-    # TODO: Alternative implementation
-    pass
+    # Base cases for small values of n.
+    if n <= 1:
+        return 1
+    if n == 2:
+        return 2
+
+    # Create a DP table (list) to store the number of ways to reach each step.
+    # The size is n+1 to have an index for each step from 0 to n.
+    dp_table = [0] * (n + 1)
+
+    # Initialize the results for the base cases.
+    dp_table[0] = 1 # 1 way to be at the ground (do nothing)
+    dp_table[1] = 1 # 1 way to get to the first step (1)
+    dp_table[2] = 2 # 2 ways to get to the second step ([1,1], [2])
+
+    # Fill the DP table from the bottom up, starting from the 3rd step.
+    for i in range(3, n + 1):
+        # The number of ways to reach step `i` is the sum of the ways
+        # to reach the previous two steps.
+        dp_table[i] = dp_table[i - 1] + dp_table[i - 2]
+
+    # The final answer is the last value in our table.
+    return dp_table[n]
+
+# --- Space-Optimized Bottom-Up ---
+def climb_stairs_optimized(n: int) -> int:
+    """
+    A space-optimized version of the bottom-up approach. Notice that to
+    calculate `dp[i]`, we only need `dp[i-1]` and `dp[i-2]`. We don't need
+    the whole table. We can solve it with just two variables.
+    """
+    if n <= 1:
+        return 1
+    
+    # `prev` stores ways to climb (i-2), `current` stores ways to climb (i-1)
+    prev, current = 1, 1
+
+    for _ in range(n - 1):
+        # In each iteration, we calculate the ways for the next step.
+        # The new `current` is the sum of the old `prev` and `current`.
+        # The new `prev` is the old `current`.
+        temp = current
+        current = prev + current
+        prev = temp
+        
+    return current
 
 
-# =============================================================================
-# USAGE EXAMPLES
-# =============================================================================
-
+# --- Example Usage ---
 if __name__ == "__main__":
-    # Example 1: Basic usage
-    print("Example 1:")
-    # TODO: demonstrate usage
+    print("--- Fibonacci with Memoization ---")
+    # This would be very slow with naive recursion
+    print(f"Fibonacci(35): {fib_memoized(35)}") # Expected: 9227465
 
-    # Example 2: Edge case
-    print("Example 2:")
-    # TODO: demonstrate edge case
-
-    # Example 3: Complex scenario
-    print("Example 3:")
-    # TODO: demonstrate complex usage
+    print("\n--- Climbing Stairs (Bottom-Up DP) ---")
+    print(f"Ways to climb 5 stairs: {climb_stairs(5)}") # Expected: 8
+    
+    print("\n--- Climbing Stairs (Space-Optimized) ---")
+    print(f"Ways to climb 5 stairs (optimized): {climb_stairs_optimized(5)}") # Expected: 8

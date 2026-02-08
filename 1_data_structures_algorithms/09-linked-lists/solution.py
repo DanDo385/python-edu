@@ -1,105 +1,134 @@
 """
-Project 12: Linked Lists - SOLUTION
+Project: Doubly Linked Lists - SOLUTION
 
-Full implementation with detailed inline comments.
-
-This solution demonstrates:
-- TODO: Key techniques
-- TODO: Optimization strategies
-- TODO: Best practices
-
-Author: Python-50x-Minis
-Date: 2025-11-16
+This file contains the complete implementation of a Doubly Linked List.
 """
 
-from typing import List, Optional, Any
-
-
-# =============================================================================
-# SOLUTION IMPLEMENTATION
-# =============================================================================
-
-def main_function(arg1: Any, arg2: Optional[Any] = None) -> Any:
+class Node:
     """
-    TODO: Complete function description with mathematical notation if needed.
-
-    Algorithm:
-    ----------
-    1. TODO: Step 1
-    2. TODO: Step 2
-    3. TODO: Step 3
-
-    Args:
-        arg1: TODO detailed description with types and constraints
-        arg2: TODO optional parameter explanation
-
-    Returns:
-        TODO: Precise description of return value
-
-    Raises:
-        ValueError: TODO specific error conditions
-        TypeError: TODO type-related errors
-
-    Examples:
-        >>> main_function([1, 2, 3])
-        6
-
-        >>> main_function([], default=0)
-        0
-
-    Time Complexity:
-        TODO: O(?) - detailed breakdown
-
-    Space Complexity:
-        TODO: O(?) - memory usage analysis
-
-    Notes:
-        TODO: Implementation notes, numerical stability, edge cases
+    A node in a doubly linked list. It holds data, a pointer to the next
+    node, and a pointer to the previous node.
     """
-    # TODO: Full implementation with line-by-line comments
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
 
-    # Input validation
-    if not arg1:
-        raise ValueError("arg1 cannot be empty")
-
-    # Main algorithm
-    result = None  # TODO: implement
-
-    return result
-
-
-# =============================================================================
-# ALTERNATIVE IMPLEMENTATIONS
-# =============================================================================
-
-def alternative_approach(arg: Any) -> Any:
+class DoublyLinkedList:
     """
-    Alternative solution demonstrating different trade-offs.
-
-    This version prioritizes:
-    - TODO: What this optimizes for (readability, speed, memory)
-
-    Trade-offs:
-    - TODO: What we gain
-    - TODO: What we sacrifice
+    A doubly linked list implementation. It maintains references to both the
+    head and the tail, allowing for O(1) appends and prepends.
     """
-    # TODO: Alternative implementation
-    pass
+    def __init__(self):
+        """Initializes an empty doubly linked list."""
+        self.head = None
+        self.tail = None
 
+    def append(self, data):
+        """
+        Adds a new node with the given data to the end of the list.
+        """
+        new_node = Node(data)
+        if self.head is None:
+            # If the list is empty, the new node is both head and tail.
+            self.head = new_node
+            self.tail = new_node
+        else:
+            # Link the new node after the current tail.
+            self.tail.next = new_node
+            new_node.prev = self.tail
+            # Update the tail to be the new node.
+            self.tail = new_node
 
-# =============================================================================
-# USAGE EXAMPLES
-# =============================================================================
+    def prepend(self, data):
+        """
+        Adds a new node with the given data to the beginning of the list.
+        """
+        new_node = Node(data)
+        if self.head is None:
+            # If the list is empty, the new node is both head and tail.
+            self.head = new_node
+            self.tail = new_node
+        else:
+            # Link the new node before the current head.
+            self.head.prev = new_node
+            new_node.next = self.head
+            # Update the head to be the new node.
+            self.head = new_node
 
+    def remove(self, node_value):
+        """
+        Removes the first node containing the specified value.
+        """
+        current = self.head
+
+        # Traverse the list to find the node with the given value.
+        while current:
+            if current.data == node_value:
+                # --- Node Found, Now Remove It ---
+
+                # Case 1: The node to remove is not the head.
+                if current.prev:
+                    current.prev.next = current.next
+                else:
+                    # Case 1a: The node is the head.
+                    self.head = current.next
+
+                # Case 2: The node to remove is not the tail.
+                if current.next:
+                    current.next.prev = current.prev
+                else:
+                    # Case 2a: The node is the tail.
+                    self.tail = current.prev
+                
+                return True  # Node removed successfully.
+            
+            current = current.next
+        
+        return False # Node not found.
+
+    def to_list(self, reverse=False):
+        """
+        Converts the doubly linked list to a Python list.
+        """
+        result = []
+        if reverse:
+            # Traverse backwards from the tail.
+            current = self.tail
+            while current:
+                result.append(current.data)
+                current = current.prev
+        else:
+            # Traverse forwards from the head.
+            current = self.head
+            while current:
+                result.append(current.data)
+                current = current.next
+        return result
+
+# --- Example Usage ---
 if __name__ == "__main__":
-    # Example 1: Basic usage
-    print("Example 1:")
-    # TODO: demonstrate usage
+    dll = DoublyLinkedList()
+    dll.append("B")
+    dll.append("C")
+    dll.prepend("A")
+    print(f"Forward list: {dll.to_list()}")
+    print(f"Reversed list: {dll.to_list(reverse=True)}")
 
-    # Example 2: Edge case
-    print("Example 2:")
-    # TODO: demonstrate edge case
+    print("\nRemoving 'B'...")
+    dll.remove("B")
+    print(f"Forward list: {dll.to_list()}")
 
-    # Example 3: Complex scenario
-    print("Example 3:")
-    # TODO: demonstrate complex usage
+    print("\nRemoving 'A' (head)...")
+    dll.remove("A")
+    print(f"Forward list: {dll.to_list()}")
+    print(f"Head: {dll.head.data if dll.head else None}, Tail: {dll.tail.data if dll.tail else None}")
+
+    print("\nRemoving 'C' (tail)...")
+    dll.remove("C")
+    print(f"Forward list: {dll.to_list()}")
+    print(f"Head: {dll.head.data if dll.head else None}, Tail: {dll.tail.data if dll.tail else None}")
+
+    print("\nTesting removal on an empty list...")
+    removed = dll.remove("Z")
+    print(f"Removed 'Z' successfully? {removed}")

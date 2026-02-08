@@ -1,76 +1,103 @@
 """
-Project 15: Dynamic Programming
+Project: Introduction to Dynamic Programming
 
-Exercise file with TODOs and partial implementation.
-
-Learning objectives:
-- TODO: List objectives
-
-Author: Python-50x-Minis
+Dynamic Programming (DP) is a method for solving complex problems by breaking
+them down into simpler subproblems. It is applicable where subproblems overlap.
+This project introduces two core DP techniques: Memoization (Top-Down) and
+Tabulation (Bottom-Up).
 """
+from typing import Dict
 
-from typing import List, Optional, Any
+# --- Problem 1: Memoization (Top-Down DP) ---
 
-
-# =============================================================================
-# THINK BEFORE CODING
-# =============================================================================
-# 1. What is the problem asking?
-# 2. What are the inputs and outputs?
-# 3. What are the edge cases?
-# 4. What is the brute force approach?
-# 5. How can we optimize?
-
-
-# =============================================================================
-# EXERCISE FUNCTIONS
-# =============================================================================
-
-def main_function(arg1: Any, arg2: Optional[Any] = None) -> Any:
+def fib_memoized(n: int, memo: Dict[int, int] = None) -> int:
     """
-    TODO: Main function description.
+    Calculates the n-th Fibonacci number using memoization.
+
+    The Fibonacci sequence is: 0, 1, 1, 2, 3, 5, 8, ... where F(n) = F(n-1) + F(n-2).
+    A naive recursive solution is very slow due to re-calculating the same
+    subproblems. Memoization stores the results of expensive function calls
+    and returns the cached result when the same inputs occur again.
 
     Args:
-        arg1: TODO description
-        arg2: TODO description
+        n: The index in the Fibonacci sequence.
+        memo: A dictionary to store the results of previous calculations.
+              This is used by the recursion and should typically be left as None
+              by the initial caller.
 
     Returns:
-        TODO: Return value description
-
-    Raises:
-        ValueError: TODO: When does this raise?
-
-    Examples:
-        >>> main_function(example_input)
-        expected_output
-
-    Time Complexity: TODO: O(?)
-    Space Complexity: TODO: O(?)
+        The n-th Fibonacci number.
     """
-    # TODO: Implement this function
+    # TODO: The `memo` dictionary is used to store computed results.
+    # On the first call, it should be initialized.
+    pass
+
+    # TODO: Base case: If the result for `n` is already in our memo,
+    # return it immediately.
+    pass
+
+    # TODO: Base cases for the Fibonacci sequence (F(0) and F(1)).
+    pass
+
+    # TODO: Recursive step: If the result is not in the memo,
+    # calculate it by making recursive calls.
+    pass
+
+    # TODO: Store the result in the memo before returning it.
+    pass
+
+    # TODO: Return the calculated result.
     pass
 
 
-# =============================================================================
-# HELPER FUNCTIONS (if needed)
-# =============================================================================
+# --- Problem 2: Tabulation (Bottom-Up DP) ---
 
-def helper_function(arg: Any) -> Any:
+def climb_stairs(n: int) -> int:
     """
-    TODO: Helper function description.
+    Calculates the number of distinct ways you can climb to the top of a
+    staircase with `n` steps. You can either climb 1 or 2 steps at a time.
+
+    This problem has optimal substructure and overlapping subproblems, making
+    it ideal for a bottom-up DP approach.
+
+    Example:
+    n = 3. Ways: [1,1,1], [1,2], [2,1]. Total = 3.
+    This is the same as (ways to climb 2 steps) + (ways to climb 1 step).
+
+    Args:
+        n: The total number of stairs.
+
+    Returns:
+        The number of distinct ways to climb the stairs.
     """
-    # TODO: Implement
+    # TODO: Handle base cases: If n is 0 or 1, there's only one way
+    # (do nothing or take one step). If n is 2, there are two ways ([1,1], [2]).
     pass
 
+    # TODO: Create a DP table (a list or array) of size n+1 to store the
+    # number of ways to reach each step.
+    pass
 
-# =============================================================================
-# MAIN (for testing)
-# =============================================================================
+    # TODO: Initialize the base cases in the DP table.
+    # dp[0] = 1 (1 way to be at the ground)
+    # dp[1] = 1 (1 way to climb to the first step)
+    # dp[2] = 2 
+    pass
 
-if __name__ == "__main__":
-    # TODO: Add example usage
-    print(f"Project 15: Dynamic Programming")
+    # TODO: Fill the DP table from the bottom up.
+    # The number of ways to reach step `i` is the sum of the ways to reach
+    # step `i-1` and step `i-2`.
+    pass
 
-    # Example test case
-    # result = main_function(test_input)
-    # print(f"Result: {result}")
+    # TODO: The final answer is the value at the top of the table.
+    pass
+
+# --- Example Usage ---
+# if __name__ == "__main__":
+#     print("---" + " Fibonacci with Memoization ---")
+#     print(f"Fibonacci(10): {fib_memoized(10)}")  # Expected: 55
+#     print(f"Fibonacci(35): {fib_memoized(35)}")  # Naive recursion would be slow
+
+#     print("\n---" + " Climbing Stairs (Bottom-Up DP) ---")
+#     print(f"Ways to climb 3 stairs: {climb_stairs(3)}") # Expected: 3
+#     print(f"Ways to climb 5 stairs: {climb_stairs(5)}") # Expected: 8
